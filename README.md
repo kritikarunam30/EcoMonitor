@@ -91,6 +91,8 @@ make test      # pytest locally; PostGIS tests are skipped if DATABASE_URL is un
 make test-live # tests marked `live` (real services, needs credentials)
 make test-db   # full suite inside the api container, against PostGIS
 make lint      # ruff check + ruff format --check
+make spike     # live: probe the real data, write docs/SPIKE_REPORT.md (needs credentials)
+make fixtures  # live: record tests/fixtures/real_singrauli/ (run `make spike` first)
 make fmt       # auto-fix lint and formatting
 ```
 
@@ -130,6 +132,7 @@ CI ([.github/workflows/ci.yml](.github/workflows/ci.yml)) runs lint and the full
 ├── data/                    # local caches and raw inputs (gitignored)
 ├── ml/                      # model training code              (planned)
 ├── models/                  # trained model weights (gitignored)
+├── scripts/                 # live Phase S scripts: spike_ee.py, make_fixtures.py
 ├── secrets/                 # key files (gitignored)
 ├── tests/                   # pytest suite and fixtures
 ├── web/                     # Vite + React + MapLibre dashboard
@@ -142,7 +145,7 @@ CI ([.github/workflows/ci.yml](.github/workflows/ci.yml)) runs lint and the full
 
 Phases from [docs/IMPLEMENTATION_PLAN.md](docs/IMPLEMENTATION_PLAN.md):
 
-- S. Real-data spike and recorded fixtures
+- S. Real-data spike and recorded fixtures (code written; the live run needs credentials)
 - 1. ~~Repo skeleton, Docker, database~~ ✅
 - 2. Data access layer, wind providers, fixtures
 - 3. Facility registry and watch units

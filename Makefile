@@ -1,4 +1,4 @@
-.PHONY: up down logs initdb resetdb dump-user restore-user seed test test-db test-live lint fmt slice accept-real demo-record demo-replay
+.PHONY: up down logs initdb resetdb dump-user restore-user seed spike fixtures test test-db test-live lint fmt slice accept-real demo-record demo-replay
 
 PY ?= python
 COMPOSE ?= docker compose
@@ -31,6 +31,14 @@ restore-user:
 
 seed:
 	@echo "seed: implemented in Phase 3 (facility registry)"
+
+# Phase S, live, needs the Phase 0 credentials in .env. `spike` writes docs/SPIKE_REPORT.md;
+# `fixtures` records tests/fixtures/real_singrauli/ (run `spike` first).
+spike:
+	$(PY) scripts/spike_ee.py $(ARGS)
+
+fixtures:
+	$(PY) scripts/make_fixtures.py --unit singrauli --days 120 $(ARGS)   # e.g. ARGS="--end 2026-02-28"
 
 # Local tests; DB tests skip without a database. test-db runs them in the api container.
 test:

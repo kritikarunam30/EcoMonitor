@@ -1,0 +1,81 @@
+{
+  "unit": "singrauli",
+  "created_at": "2026-10-10T08:05:48.605879+00:00",
+  "start": "2025-11-01",
+  "end": "2026-02-28",
+  "days": 120,
+  "bbox": [
+    82.16551629259746,
+    23.58923564804747,
+    83.34604770740252,
+    24.672657933429107
+  ],
+  "region_bbox": [
+    82.0,
+    23.6,
+    83.4,
+    24.8
+  ],
+  "centre": [
+    82.75578200000001,
+    24.130965999999997
+  ],
+  "plants": [
+    {
+      "name": "Vindhyachal",
+      "lon": 82.67408,
+      "lat": 24.10477,
+      "capacity_mw": 4760.0,
+      "source": "coal"
+    },
+    {
+      "name": "Sasan UMPP",
+      "lon": 82.62288,
+      "lat": 23.96443,
+      "capacity_mw": 3960.0,
+      "source": "coal"
+    },
+    {
+      "name": "Rihand Thermal Power Station",
+      "lon": 82.79324,
+      "lat": 24.02714,
+      "capacity_mw": 3000.0,
+      "source": "coal"
+    },
+    {
+      "name": "Obra Thermal Power Station",
+      "lon": 82.98291,
+      "lat": 24.45204,
+      "capacity_mw": 2320.0,
+      "source": "coal"
+    },
+    {
+      "name": "Singrauli Super Thermal Power Station",
+      "lon": 82.7058,
+      "lat": 24.10645,
+      "capacity_mw": 2000.0,
+      "source": "coal"
+    }
+  ],
+  "sources": {
+    "no2": "COPERNICUS/S5P/OFFL/L3_NO2 [tropospheric_NO2_column_number_density, cloud_fraction]",
+    "so2": "COPERNICUS/S5P/OFFL/L3_SO2 [SO2_column_number_density]",
+    "aer_ai": "COPERNICUS/S5P/OFFL/L3_AER_AI [absorbing_aerosol_index]",
+    "wind": "ECMWF/ERA5/HOURLY at 100 m",
+    "firms": "FIRMS area API",
+    "flare_sites": "1 annual flare files, 0 sites in the region",
+    "osm": "Overpass, 302 features",
+    "s2_chips": "COPERNICUS/S2_SR_HARMONIZED, 3 chips at ['2025-12-17T05:12:27.326000', '2026-01-14T05:12:10.216000', '2026-02-18T05:12:08.080000']"
+  },
+  "notes": [],
+  "files": [
+    "aer_ai.nc",
+    "firms.csv",
+    "flare_sites.csv",
+    "no2.nc",
+    "osm.geojson",
+    "s2_chips.nc",
+    "so2.nc",
+    "wind.csv"
+  ]
+}

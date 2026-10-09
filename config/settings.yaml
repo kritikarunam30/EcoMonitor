@@ -36,9 +36,11 @@ flaring:
   nightfire_temp_k: 1400         # nightfire only
   annual_site_match_km: 1        # a detection within this distance of an annual flare site is flagged known_flare_site
 wind:
-  chain: [cds_era5_100m, gfs_ee, era5_land_10m_ee]   # final order set by Phase S
+  # Gate G1 (2026-10-10): ERA5 100 m for history, read from Earth Engine first and from the CDS second;
+  # GFS 10 m for the last days, which ERA5 does not cover yet; ERA5-Land 10 m as the fallback.
+  chain: [era5_100m_ee, cds_era5_100m, gfs_ee, era5_land_10m_ee]
   level: 100m
-  uncertainty_frac: {cds_era5_100m: 0.25, gfs_ee: 0.30, era5_land_10m_ee: 0.35}
+  uncertainty_frac: {era5_100m_ee: 0.25, cds_era5_100m: 0.25, gfs_ee: 0.30, era5_land_10m_ee: 0.35}
   min_speed_ms: 1.5
   max_speed_ms: 10
 attribute:
@@ -85,7 +87,7 @@ thermal:
 schedule:
   daily_tz: Asia/Kolkata
   daily_time: "15:00"
-  rerun_previous_days: 5
+  rerun_previous_days: 10        # gate G1: offline NO2 arrives about 9 days late (plan default was 5)
   firms_every_hours: 3
   emission_refresh: monthly
   heartbeat_minutes: 10        # worker liveness log (not in plan §0.10)
