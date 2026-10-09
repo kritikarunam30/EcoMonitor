@@ -1,0 +1,23 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "delhi_ncr",
+        "label": "Delhi-NCR (contested crop-burning showcase, Oct-Nov)",
+        "note": "Placeholder box; verify before using it as a region config."
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [76.5, 28.0],
+          [78.0, 28.0],
+          [78.0, 29.3],
+          [76.5, 29.3],
+          [76.5, 28.0]
+        ]]
+      }
+    }
+  ]
+}
