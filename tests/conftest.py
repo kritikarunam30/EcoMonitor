@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import os
+import socket
 
 # Tests never touch live services.
 os.environ["DATA_MODE"] = "fixture"
@@ -24,6 +25,32 @@ def pytest_collection_modifyitems(config: pytest.Config, items: list[pytest.Item
     for item in items:
         if "live" in item.keywords:
             item.add_marker(skip_live)
+
+
+@pytest.fixture(autouse=True)
+def _no_network(monkeypatch: pytest.MonkeyPatch) -> None:
+    """Any attempt to open a connection to another machine fails the test (CLAUDE.md: no network in tests)."""
+    if os.environ.get("RUN_LIVE") == "1":
+        return
+    connect = socket.socket.connect
+
+    def guarded(self, address, *args):
+        host = address[0] if isinstance(address, tuple) else address
+        if host not in ("127.0.0.1", "::1", "localhost"):
+            raise RuntimeError(f"a test tried to open a network connection to {address}")
+        return connect(self, address, *args)
+
+    monkeypatch.setattr(socket.socket, "connect", guarded)
+
+
+@pytest.fixture
+def live_cache(tmp_path, monkeypatch: pytest.MonkeyPatch):
+    """DATA_MODE=live with an empty cache in tmp_path. The network stays blocked: tests replace the
+    function that would call the service and check what the client does around it."""
+    settings = get_settings()
+    monkeypatch.setattr(settings, "data_mode", "live")
+    monkeypatch.setattr(settings, "cache_dir", tmp_path / "cache")
+    return tmp_path / "cache"
 
 
 @pytest.fixture

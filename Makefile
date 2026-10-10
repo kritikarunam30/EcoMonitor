@@ -1,4 +1,4 @@
-.PHONY: up down logs initdb resetdb dump-user restore-user seed spike fixtures test test-db test-live lint fmt slice accept-real demo-record demo-replay
+.PHONY: up down logs initdb resetdb dump-user restore-user seed spike fixtures sources synthetic-fixtures smoke test test-db test-live lint fmt slice accept-real demo-record demo-replay
 
 PY ?= python
 COMPOSE ?= docker compose
@@ -39,6 +39,19 @@ spike:
 
 fixtures:
 	$(PY) scripts/make_fixtures.py --unit singrauli --days 120 $(ARGS)   # e.g. ARGS="--end 2026-02-28"
+
+# Offline. `sources` rewrites config/sources.yaml from docs/SPIKE_FACTS.json (run after every spike);
+# `synthetic-fixtures` rewrites tests/fixtures/synthetic/.
+sources:
+	$(PY) scripts/make_sources.py
+
+synthetic-fixtures:
+	$(PY) scripts/make_synthetic_fixtures.py
+
+# Live check of the data clients (Phase 2), needs the Phase 0 credentials in .env.
+smoke:
+	DATA_MODE=live $(PY) -m app.clients.ee_client --smoke
+	DATA_MODE=live $(PY) -m app.clients.wind --smoke
 
 # Local tests; DB tests skip without a database. test-db runs them in the api container.
 test:

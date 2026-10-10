@@ -131,3 +131,56 @@ The spike ran live on 2026-10-10, the real slice is recorded and gate G1 is deci
   are not in the download. The two sets of files in `climate_trace/` overlap: the newer ones contain the older.
 - The flare-location file has no site in the region.
 - Nightfire licence: optional, status not recorded.
+
+---
+
+## Phase 2 — Data access layer, wind providers, fixtures — 2026-10-10
+
+### Built
+- `config/sources.yaml`, written by `scripts/make_sources.py` (`make sources`) from `docs/SPIKE_FACTS.json`: collections, products and bands, wind providers, the CDS request, Sentinel-2 bands, FIRMS sources. A band the spike did not list is an error in the generator. A test fails when the file differs from what the generator writes, and when an id or band is not in `docs/SPIKE_REPORT.md`.
+- `app/clients/base.py`: data modes, fixture lookup (the recorded slice first, then `tests/fixtures/synthetic/`), the cache `data/cache/<source>/<key>.{nc,parquet,json}`, and `retry` (exponential backoff with jitter; the service's own error text is raised).
+- `app/clients/ee_client.py`: `get_no2`, `get_so2`, `get_aerosol_index`, `get_ch4`, `get_s2_chip`, `get_worldcover`, `get_ndvi`, `get_burned_area`, `get_population`, `get_tile_url`, `get_buffer_timeseries`, and `stream_for` (near-real-time or offline collection for a day, gate G1).
+- `get_buffer_timeseries` uses the stacked-bands form: one `reduceRegions` per calendar quarter, cached as parquet per quarter.
+- `app/clients/wind.py:get_wind` with the four providers of gate G1 (`era5_100m_ee` is the new one) and `app/clients/cds.py` (one download per month, cached NetCDF). The result has `source`, `level`, `uncertainty_frac` and `time_offset_h` per time, and a summary in the attrs.
+- `app/clients/firms.py`, `flares.py` (one interface over `annual_sites`, `firms_persistent`, `nightfire`), `nightfire.py` (optional; never raises), `osm.py`.
+- `tests/synthetic.py`: `make_correlated_background`, `inject_plume` (Lagrangian puff model), `apply_footprint`, `add_missing`, `add_neighbour_source`; `puff_plume` returns the column with a mass budget.
+- `scripts/make_synthetic_fixtures.py` and its output in `tests/fixtures/synthetic/` (CH4, land cover, burned area, population, a 10 m GFS wind for five days after the slice). The values are made up and marked `mode: synthetic`.
+- Tests: five new offline test files. A test that opens a network connection to another machine fails (`conftest.py`). Three tests in `tests/live/` are marked `live`.
+
+### Done when
+- [x] All client tests pass in fixture mode: `ruff check`, `ruff format --check` and `pytest` pass locally (counts in the commit message). Skipped: the 3 live tests, and the 3 PostGIS tests because no database was reachable in this session.
+- [x] `python -m app.clients.wind --smoke` works in live mode (run on 2026-10-10): `era5_100m_ee` answered up to 2026-10-02, `cds_era5_100m` 3–5 October, `gfs_ee` (10 m, 2 h offset) 6–9 October.
+- [ ] `python -m app.clients.ee_client --smoke` in live mode: **10 of 11 checks pass.** `get_tile_url` fails with "Permission 'earthengine.maps.create' denied on resource 'projects/land-emission-monitor'". The service account needs that permission (👤); until then the live path of `get_tile_url` is untested.
+- [x] `get_buffer_timeseries` returns one quarter for 20 units in one call in live mode: 1820 rows in 2.7 s (181 bands in one `reduceRegions`). The three live tests pass with `RUN_LIVE=1`.
+
+### Found with live data
+- **The recorded slice was labelled up to half a pixel off.** The Sentinel-5P Level-3 pixels are 0.01° with edges on multiples of 0.01°. The Phase S recording grid was not aligned with them, so each value was stored under coordinates up to 0.0045° away from its pixel centre. A 5 km buffer mean over the plants came out about 7 % higher from the slice than from Earth Engine. Fixed in two places:
+  - `daily_grids` now widens the bbox to whole pixels (`snap_bbox`), for the client and for `make_fixtures.py`.
+  - The `lat`/`lon` coordinates of `no2.nc`, `so2.nc` and `aer_ai.nc` in the slice were re-labelled to the pixel centres (values unchanged; noted in `manifest.json`). The re-labelled NO2 and cloud grids equal a live aligned fetch cell for cell on 3 days (12 078 cells). Live and recorded buffer means now agree within 3 %.
+- `reduceRegions` runs unweighted (a pixel counts when its centre is in the buffer), so `n_total` and the mean are defined as in fixture mode. The weighted default counted 86 pixels in a 5 km buffer; unweighted counts 69, the grid statistic 70–71.
+- The MODIS burned-area band and the NDVI band need a cast to float before they are merged with the masked template (found by the smoke check).
+
+### Deviations from the plan
+- `rioxarray` is not a dependency: nothing imports it (no GeoTIFF is written). Added now: `scipy`, `shapely`, `geopandas`, `pyarrow`.
+- New settings: `wind.gfs_max_offset_hours`, and the sections `data` (request sizes, Sentinel-2 search window, NDVI and land-cover scale) and `layers` (display range and palette per tile layer). New `Settings` fields for the keys and for the cache, fixture, flare and Nightfire folders.
+- `gfs_ee` uses the nearest analysis within `wind.gfs_max_offset_hours` (3) of the requested time, because the spike confirmed analyses at run hours only. `time_offset_h` records the difference (2 h for the 08:00 overpass).
+- A time is answered by a provider only when it has wind for every requested point, so one call never mixes levels within a time.
+- A provider that raises is skipped, logged and named in `attrs["notes"]`; the next one answers.
+- `replay` mode reads the cache only and never calls a service. Phase 13 builds the demo replay on this.
+- A cache file whose data ends less than `schedule.rerun_previous_days` before it was written is fetched again. Without this the first, incomplete version of the last days would be kept.
+- The cache holds `.nc`, `.parquet` and `.json` (OSM features, population, FIRMS availability); no `.tif`.
+- `get_s2_chip` returns `None` when no scene under `data.s2_max_cloud_pct` lies within `data.s2_search_days`. The acquisition time is in `attrs["acquired_at"]`.
+- `get_ndvi` in fixture mode is computed from the recorded Sentinel-2 chips, so it covers 1.3 km around Vindhyachal only.
+- `get_tile_url` returns `fixture://tiles/...` in fixture mode, which no map can load by mistake.
+- Nightfire: the scripted download with `EOG_*` is **not implemented** (marked TODO in `nightfire.py`), because its endpoints were not probed in Phase S. The column names of the nightly files are not verified either; columns are found by pattern and a file without them is skipped.
+- `scripts/ee_common.py` and `scripts/flare_sources.py` import `retry`, `grid_spec`, `daily_grids`, the Overpass and FIRMS helpers and `read_flare_sites` from `app/clients/`, where they moved, so there is one copy. The live scripts were not re-run after this change; their offline tests pass.
+- The smoke checks and the live tests were run by Claude Code with the keys in `.env`, not by a person.
+
+### Open questions
+- 👤 Grant the service account `earthengine.maps.create` (or decide that tiles are rendered another way) before Phases 10 and 11 need `get_tile_url`.
+- Re-record the slice with `make fixtures ARGS="--end 2026-02-28"` when convenient. The re-labelled slice is exact; a new recording would also start the window on a pixel edge.
+- A GFS forecast step valid at 08:00 UTC (the 06:00 run, step 2) would remove the 2 h offset. The spike confirmed the properties `forecast_hours` and `forecast_time` but not that such images exist; check in the next spike run.
+- CH4 uses `CH4_column_volume_mixing_ratio_dry_air`, the first match in the spike. `..._bias_corrected` is also in the band list and may be the better choice for the layer; decide in Phase 4.
+- The buffer time-series cache is keyed by the whole set of units, so adding a unit fetches every quarter again (one request per quarter).
+- Still for people to fill in: whether the Level-3 products are QA-filtered (report section 3). Until then `valid` means "the product has a value".
+- Layer display ranges in `layers` are first values; tune them in Phase 11.

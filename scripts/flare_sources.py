@@ -4,7 +4,6 @@ night-time FIRMS detections near plants. No network; tested in tests/test_spike.
 
 from __future__ import annotations
 
-import re
 from collections.abc import Sequence
 from pathlib import Path
 from typing import Any
@@ -12,51 +11,14 @@ from typing import Any
 import numpy as np
 import pandas as pd
 
+from app.clients.flares import in_bbox, read_flare_sites  # owned by the app client since Phase 2
 from app.geo.projection import local_aeqd
 from app.settings import REPO_ROOT
 
 FLARE_DIR = REPO_ROOT / "data" / "registry" / "raw" / "flares"
 NIGHTFIRE_DIR = REPO_ROOT / "data" / "raw" / "nightfire"
-LAT_COLUMN = re.compile(r"^lat", re.I)
-LON_COLUMN = re.compile(r"^(lon|lng)", re.I)
-KML_COORDINATES = re.compile(r"<coordinates>\s*([-\d.eE]+)\s*,\s*([-\d.eE]+)")
 
-
-def read_flare_sites(path: Path) -> pd.DataFrame:
-    """Flare sites of one annual file with `lon` and `lat` columns added.
-
-    Reads .csv, .xlsx (every sheet that has latitude and longitude columns) and .kml (placemark points).
-    The latitude and longitude columns are found by name, so the file's own layout is kept.
-    """
-    suffix = path.suffix.lower()
-    if suffix == ".kml":
-        pairs = KML_COORDINATES.findall(path.read_text(encoding="utf-8", errors="replace"))
-        return pd.DataFrame({"lon": [float(lon) for lon, _ in pairs], "lat": [float(lat) for _, lat in pairs]})
-    if suffix == ".csv":
-        sheets = {"csv": pd.read_csv(path)}
-    elif suffix == ".xlsx":
-        sheets = pd.read_excel(path, sheet_name=None)
-    else:
-        raise ValueError(f"{path.name}: unsupported file type (use .xlsx, .csv or .kml)")
-
-    frames = []
-    for name, sheet in sheets.items():
-        lat = next((c for c in sheet.columns if LAT_COLUMN.match(str(c))), None)
-        lon = next((c for c in sheet.columns if LON_COLUMN.match(str(c))), None)
-        if lat is None or lon is None:
-            continue
-        sheet = sheet.assign(
-            lon=pd.to_numeric(sheet[lon], errors="coerce"), lat=pd.to_numeric(sheet[lat], errors="coerce")
-        )
-        frames.append(sheet.dropna(subset=["lon", "lat"]).assign(sheet=name))
-    if not frames:
-        raise ValueError(f"{path.name}: no sheet has both a latitude and a longitude column")
-    return pd.concat(frames, ignore_index=True)
-
-
-def in_bbox(sites: pd.DataFrame, bbox: Sequence[float]) -> pd.DataFrame:
-    west, south, east, north = bbox
-    return sites[sites["lon"].between(west, east) & sites["lat"].between(south, north)]
+__all__ = ["in_bbox", "read_flare_sites"]
 
 
 def flare_sites_summary(directory: Path, bbox: Sequence[float]) -> dict[str, Any]:

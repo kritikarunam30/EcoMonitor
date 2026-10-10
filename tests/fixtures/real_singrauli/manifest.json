@@ -67,7 +67,9 @@
     "osm": "Overpass, 302 features",
     "s2_chips": "COPERNICUS/S2_SR_HARMONIZED, 3 chips at ['2025-12-17T05:12:27.326000', '2026-01-14T05:12:10.216000', '2026-02-18T05:12:08.080000']"
   },
-  "notes": [],
+  "notes": [
+    "2026-10-10 (Phase 2): lat/lon of no2.nc, so2.nc and aer_ai.nc re-labelled to the centres of the product's own 0.01 degree pixels. The recording grid was not aligned with it, so labels were up to 0.0045 degrees off; values are unchanged and equal a live aligned fetch cell for cell."
+  ],
   "files": [
     "aer_ai.nc",
     "firms.csv",

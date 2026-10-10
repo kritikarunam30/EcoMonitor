@@ -43,6 +43,7 @@ wind:
   uncertainty_frac: {era5_100m_ee: 0.25, cds_era5_100m: 0.25, gfs_ee: 0.30, era5_land_10m_ee: 0.35}
   min_speed_ms: 1.5
   max_speed_ms: 10
+  gfs_max_offset_hours: 3        # gfs_ee has analyses at run hours only; the nearest one within this answers (not in plan §0.10)
 attribute:
   cone_half_angle_deg: 30
   transport_hours: 3
@@ -95,3 +96,18 @@ alerts:
   max_watchlists_per_email: 5
   max_watchlists_per_ip_per_day: 20
   demo_auto_confirm: false
+# Data access (Phase 2; not in plan §0.10). Asset ids and bands are in config/sources.yaml.
+data:
+  ee_chunk_days: 20              # days stacked into one Earth Engine pixel request
+  s2_search_days: 5              # a Sentinel-2 chip may be this many days from the requested date
+  s2_max_cloud_pct: 20
+  ndvi_window_days: 15
+  ndvi_scale_m: 100
+  worldcover_scale_m: 100
+  overpass_timeout_s: 180
+# Map layers served as tiles: display range and palette per layer (Phase 2; tuned in Phase 11).
+layers:
+  no2: {min: 0.0, max: 0.0004, palette: ["#000004", "#51127c", "#b73779", "#fc8961", "#fcfdbf"]}
+  so2: {min: 0.0, max: 0.001, palette: ["#000004", "#51127c", "#b73779", "#fc8961", "#fcfdbf"]}
+  ch4: {min: 1850, max: 1950, palette: ["#440154", "#3b528b", "#21918c", "#5ec962", "#fde725"]}
+  aer_ai: {min: -1.0, max: 2.0, palette: ["#2166ac", "#f7f7f7", "#b2182b"]}

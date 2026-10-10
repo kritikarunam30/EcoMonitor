@@ -44,11 +44,13 @@ class AppConfig(BaseModel):
     thermal: dict[str, Any] = {}
     schedule: dict[str, Any] = {}
     alerts: dict[str, Any] = {}
+    data: dict[str, Any] = {}
+    layers: dict[str, Any] = {}
 
 
 class Settings(BaseSettings):
     """Values from the environment / .env. Phases add fields here as they need keys
-    (Earth Engine, CDS and FIRMS in Phase 2, SMTP in Phase 12); .env.example lists them all."""
+    (SMTP in Phase 12); .env.example lists them all."""
 
     model_config = SettingsConfigDict(env_file=REPO_ROOT / ".env", extra="ignore")
 
@@ -59,6 +61,22 @@ class Settings(BaseSettings):
     # Empty means "not configured": require_admin then refuses every request.
     admin_token: str = ""
 
+    # Data access (Phase 2). Asset ids and bands are in sources.yaml, generated from the spike.
+    sources_path: Path = Path("config/sources.yaml")
+    cache_dir: Path = Path("data/cache")
+    fixture_dir: Path = Path("tests/fixtures")
+    flare_dir: Path = Path("data/registry/raw/flares")
+    nightfire_dir: Path = Path("data/raw/nightfire")
+    ee_project: str = ""
+    ee_service_account: str = ""
+    ee_key_file: str = "secrets/ee-key.json"
+    firms_map_key: str = ""
+    cds_url: str = ""  # empty: cdsapi reads ~/.cdsapirc
+    cds_key: str = ""
+    # Optional (Nightfire, licence-gated). Nothing may fail when these are empty.
+    eog_client_id: str = ""
+    eog_client_secret: str = ""
+
     def resolve(self, path: str | Path) -> Path:
         """Resolve a repo-relative path from config to an absolute path."""
         p = Path(path)
@@ -68,11 +86,22 @@ class Settings(BaseSettings):
     def config(self) -> AppConfig:
         return load_config(self.resolve(self.config_path))
 
+    @property
+    def sources(self) -> dict[str, Any]:
+        return load_sources(self.resolve(self.sources_path))
+
 
 @lru_cache
 def load_config(path: Path) -> AppConfig:
     with open(path, encoding="utf-8") as f:
         return AppConfig.model_validate(yaml.safe_load(f))
+
+
+@lru_cache
+def load_sources(path: Path) -> dict[str, Any]:
+    """config/sources.yaml: asset ids, bands and access facts confirmed by the spike (`make sources`)."""
+    with open(path, encoding="utf-8") as f:
+        return yaml.safe_load(f)
 
 
 @lru_cache

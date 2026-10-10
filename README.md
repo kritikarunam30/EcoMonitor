@@ -79,6 +79,7 @@ npm run dev                          # map on :5173, proxies /api to :8000
 | `.env`                 | Secrets and per-machine values: `DATABASE_URL`, `DATA_MODE` (`live` / `fixture` / `replay`), API keys. Copy from `.env.example`. **Never commit it.** |
 | `config/settings.yaml` | Region bounding box, detector thresholds, schedule and weights                               |
 | `config/wording.yaml`  | User-facing labels, captions and the disclaimer                                              |
+| `config/sources.yaml`  | Earth Engine asset ids, band names and access facts. Generated from the spike by `make sources`; do not edit by hand. |
 | `config/regions/`      | Region boundary as GeoJSON                                                                    |
 | `secrets/`             | Service-account key files (e.g. Earth Engine). Ignored by git.                               |
 
@@ -93,8 +94,18 @@ make test-db   # full suite inside the api container, against PostGIS
 make lint      # ruff check + ruff format --check
 make spike     # live: probe the real data, write docs/SPIKE_REPORT.md (needs credentials)
 make fixtures  # live: record tests/fixtures/real_singrauli/ (run `make spike` first)
+make sources   # offline: rewrite config/sources.yaml from docs/SPIKE_FACTS.json (after every spike)
+make smoke     # live: small requests through the Earth Engine client and the wind chain
 make fmt       # auto-fix lint and formatting
 ```
+
+### Data modes
+
+Every data client (`backend/app/clients/`) works in three modes, set by `DATA_MODE`:
+
+- `fixture` reads `tests/fixtures/`: the recorded Singrauli slice first, then the small synthetic files. Tests and CI always use it, and a test that tries to open a network connection fails.
+- `live` reads `data/cache/<source>/` and calls the service on a miss. Data for the last days is fetched again until it has settled (`schedule.rerun_previous_days`).
+- `replay` reads the cache only.
 
 CI ([.github/workflows/ci.yml](.github/workflows/ci.yml)) runs lint and the full test suite against a PostGIS service, and builds the web app. Database tests use a separate `<database>_test` database, so they never touch development data.
 
@@ -114,7 +125,7 @@ CI ([.github/workflows/ci.yml](.github/workflows/ci.yml)) runs lint and the full
 │       ├── geo/             # local_aeqd projection
 │       ├── repositories/    # database I/O
 │       ├── jobs/            # scheduler (worker entry point)
-│       ├── clients/         # external data sources            (planned)
+│       ├── clients/         # Earth Engine, wind chain, CDS, FIRMS, flares, OSM; cache and data modes
 │       ├── registry/        # facility registry                (planned)
 │       ├── detect/          # gas, flare, thermal, smoke       (planned)
 │       ├── attribute/       # source attribution, emissions    (planned)
@@ -132,7 +143,7 @@ CI ([.github/workflows/ci.yml](.github/workflows/ci.yml)) runs lint and the full
 ├── data/                    # local caches and raw inputs (gitignored)
 ├── ml/                      # model training code              (planned)
 ├── models/                  # trained model weights (gitignored)
-├── scripts/                 # live Phase S scripts: spike_ee.py, make_fixtures.py
+├── scripts/                 # spike_ee.py, make_fixtures.py (live); make_sources.py, make_synthetic_fixtures.py (offline)
 ├── secrets/                 # key files (gitignored)
 ├── tests/                   # pytest suite and fixtures
 ├── web/                     # Vite + React + MapLibre dashboard
@@ -145,9 +156,9 @@ CI ([.github/workflows/ci.yml](.github/workflows/ci.yml)) runs lint and the full
 
 Phases from [docs/IMPLEMENTATION_PLAN.md](docs/IMPLEMENTATION_PLAN.md):
 
-- S. Real-data spike and recorded fixtures (code written; the live run needs credentials)
+- S. ~~Real-data spike and recorded fixtures~~ ✅
 - 1. ~~Repo skeleton, Docker, database~~ ✅
-- 2. Data access layer, wind providers, fixtures
+- 2. ~~Data access layer, wind providers, fixtures~~ ✅
 - 3. Facility registry and watch units
 - 4. Gas detectors, flaring, score
 - 5A. Attribution, fusion, first end-to-end slice
