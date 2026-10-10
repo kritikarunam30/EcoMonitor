@@ -1,0 +1,45 @@
+unit_or_facility,start,end,type,direction,source_url,unit_no,capacity_out_mw,outage_kind,ongoing_at_report,duration_days,reason
+ALL,2020-03-25,2020-05-31,lockdown,low,"TODO add a source link: India national COVID-19 lockdown, phases 1-4",,,,False,,national lockdown
+OBRA TPS,2010-06-26,2022-05-14,outage,low,"CEA Daily Maintenance Report, Sub-Report 10, 2022-05-14 (dgr10-2022-05-14.xls)",7.0,94.0,planned,True,4340.0,R AND M / REFURBISHMENT WORKS
+OBRA TPS,2018-03-04,2021-05-15,outage,low,"CEA Daily Maintenance Report, Sub-Report 10, 2021-05-15 (dgr10-2021-05-15.xls)",13.0,200.0,planned,True,1168.0,R AND M / REFURBISHMENT WORKS
+ANPARA TPS,2019-11-13,2021-05-15,outage,low,"CEA Daily Maintenance Report, Sub-Report 10, 2021-05-15 (dgr10-2021-05-15.xls)",7.0,500.0,forced_major,True,549.0,HYDROGEN PRESSURE PROBLEM
+SINGRAULI STPS,2020-07-28,2020-09-19,outage,low,"CEA Daily Maintenance Report, Sub-Report 10, 2020-09-19 (dgr10-2020-09-19.xls)",5.0,200.0,planned,True,53.0,OVERHAULING WORKS
+MAHAN TPP,2020-08-03,2020-09-19,outage,low,"CEA Daily Maintenance Report, Sub-Report 10, 2020-09-19 (dgr10-2020-09-19.xls)",2.0,600.0,forced_major,True,47.0,BOILER MISC. PROBLEM
+ANPARA TPS,2020-08-12,2020-09-19,outage,low,"CEA Daily Maintenance Report, Sub-Report 10, 2020-09-19 (dgr10-2020-09-19.xls)",3.0,210.0,forced_major,True,38.0,WATER WALL TUBE LEAKAGE
+SINGRAULI STPS,2020-09-17,2020-09-19,outage,low,"CEA Daily Maintenance Report, Sub-Report 10, 2020-09-19 (dgr10-2020-09-19.xls)",6.0,500.0,forced_minor,True,2.0,HYDROGEN PRESSURE PROBLEM
+MAHAN TPP,2021-02-06,2021-05-15,outage,low,"CEA Daily Maintenance Report, Sub-Report 10, 2021-05-15 (dgr10-2021-05-15.xls)",1.0,600.0,forced_major,True,98.0,RSD/LOW SCHEDULE
+SINGRAULI STPS,2021-03-16,2021-05-15,outage,low,"CEA Daily Maintenance Report, Sub-Report 10, 2021-05-15 (dgr10-2021-05-15.xls)",3.0,200.0,forced_major,True,60.0,TURBINE VIBRATIONS HIGH
+RIHAND STPS,2021-03-30,2021-05-15,outage,low,"CEA Daily Maintenance Report, Sub-Report 10, 2021-05-15 (dgr10-2021-05-15.xls)",4.0,500.0,planned,True,46.0,OVERHAULING WORKS
+ANPARA TPS,2021-05-13,2021-05-15,outage,low,"CEA Daily Maintenance Report, Sub-Report 10, 2021-05-15 (dgr10-2021-05-15.xls)",2.0,210.0,forced_minor,True,2.0,I.D. FANS PROBLEM
+OBRA TPS,2022-01-08,2022-05-14,outage,low,"CEA Daily Maintenance Report, Sub-Report 10, 2022-05-14 (dgr10-2022-05-14.xls)",13.0,200.0,forced_major,True,126.0,TURBINE VIBRATION HIGH
+SINGRAULI STPS,2022-03-22,2022-05-14,outage,low,"CEA Daily Maintenance Report, Sub-Report 10, 2022-05-14 (dgr10-2022-05-14.xls)",2.0,200.0,planned,True,53.0,OVERHAULING WORKS
+VINDHYACHAL STPS,2022-04-16,2022-05-14,outage,low,"CEA Daily Maintenance Report, Sub-Report 10, 2022-05-14 (dgr10-2022-05-14.xls)",4.0,210.0,planned,True,28.0,OVERHAULING WORKS
+SINGRAULI STPS,2022-05-11,2022-05-14,outage,low,"CEA Recommissioning Report, Sub-Report 14, 2022-05-14 (dgr14-2022-05-14.xls)",6.0,500.0,,False,3.0,WATER WALL TUBE LEAKAGE
+MAHAN TPP,2022-05-14,2022-05-14,outage,low,"CEA Daily Maintenance Report, Sub-Report 10, 2022-05-14 (dgr10-2022-05-14.xls)",1.0,600.0,forced_minor,True,0.0,RSD/LOW SCHEDULE
+OBRA TPS,2022-05-14,2022-05-14,outage,low,"CEA Daily Maintenance Report, Sub-Report 10, 2022-05-14 (dgr10-2022-05-14.xls)",9.0,200.0,forced_minor,True,0.0,ELECTRICAL FAULT
+OBRA TPS,2022-05-14,2022-05-14,outage,low,"CEA Daily Maintenance Report, Sub-Report 10, 2022-05-14 (dgr10-2022-05-14.xls)",11.0,200.0,forced_minor,True,0.0,ELECTRICAL FAULT
+OBRA TPS,2022-05-14,2022-05-14,outage,low,"CEA Recommissioning Report, Sub-Report 14, 2022-05-14 (dgr14-2022-05-14.xls)",12.0,200.0,,False,0.0,ELECTRICAL FAULT
+SASAN UMTPP,2022-11-22,2023-05-19,outage,low,"CEA Daily Maintenance Report, Sub-Report 10, 2023-05-19 (dgr10-2023-05-19.xls)",1.0,660.0,forced_major,True,178.0,GENEATOR TRANSFORMER DAMAGED
+OBRA TPS,2023-01-29,2023-05-19,outage,low,"CEA Daily Maintenance Report, Sub-Report 10, 2023-05-19 (dgr10-2023-05-19.xls)",10.0,200.0,forced_major,True,110.0,TURBINE MISC. PROBLEMS
+OBRA TPS,2023-04-16,2023-05-19,outage,low,"CEA Daily Maintenance Report, Sub-Report 10, 2023-05-19 (dgr10-2023-05-19.xls)",13.0,200.0,forced_major,True,33.0,CONDENSER LOW VACCUM
+ANPARA TPS,2023-04-18,2023-05-19,outage,low,"CEA Daily Maintenance Report, Sub-Report 10, 2023-05-19 (dgr10-2023-05-19.xls)",1.0,210.0,forced_major,True,31.0,GENEATOR TRANSFORMER MISC.
+ANPARA C TPS,2023-05-19,2023-05-19,outage,low,"CEA Daily Maintenance Report, Sub-Report 10, 2023-05-19 (dgr10-2023-05-19.xls)",2.0,600.0,forced_minor,True,0.0,WATER WALL TUBE LEAKAGE
+OBRA TPS,2024-05-16,2024-05-17,outage,low,"CEA Daily Maintenance Report, Sub-Report 10, 2024-05-17 (dgr10-2024-05-17.xls)",10.0,200.0,forced_minor,True,1.0,ESP PROBLEM
+ANPARA TPS,2024-05-17,2024-05-17,outage,low,"CEA Recommissioning Report, Sub-Report 14, 2024-05-17 (dgr14-2024-05-17.xls)",6.0,500.0,,False,0.0,TURBINE BEARING PROBLEM
+ANPARA C TPS,2025-01-11,2025-02-28,outage,low,"CEA Daily Maintenance Report, Sub-Report 10, 2025-02-28 (dgr10-2025-02-28.xls)",2.0,600.0,forced_major,True,48.0,GENERATOR PROTECTION RELAY OPERATION PROBLEM
+ANPARA TPS,2025-02-07,2025-02-28,outage,low,"CEA Daily Maintenance Report, Sub-Report 10, 2025-02-28 (dgr10-2025-02-28.xls)",1.0,210.0,planned,True,21.0,OVERHAULING WORKS
+RIHAND STPS,2025-02-07,2025-02-28,outage,low,"CEA Daily Maintenance Report, Sub-Report 10, 2025-02-28 (dgr10-2025-02-28.xls)",6.0,500.0,planned,True,21.0,BOILER OVERHAUL/ ANNUAL MAINTENANCE
+ANPARA C TPS,2025-02-25,2025-02-28,outage,low,"CEA Daily Maintenance Report, Sub-Report 10, 2025-02-28 (dgr10-2025-02-28.xls)",1.0,600.0,forced_minor,True,3.0,CONDENSER TUBE LEAKAGE/ CLEANING
+VINDHYACHAL STPS,2025-02-25,2025-02-28,outage,low,"CEA Daily Maintenance Report, Sub-Report 10, 2025-02-28 (dgr10-2025-02-28.xls)",3.0,210.0,planned,True,3.0,OVERHAULING WORKS
+MAHAN TPP,2025-02-28,2025-02-28,outage,low,"CEA Daily Maintenance Report, Sub-Report 10, 2025-02-28 (dgr10-2025-02-28.xls)",2.0,600.0,forced_minor,True,0.0,AIR PREHEATERS PROBLEM
+MAHAN TPP,2025-04-13,2025-05-16,outage,low,"CEA Daily Maintenance Report, Sub-Report 10, 2025-05-16 (dgr10-2025-05-16.xls)",1.0,600.0,forced_major,True,33.0,GENEARTOR MISC.
+VINDHYACHAL STPS,2025-05-01,2025-05-16,outage,low,"CEA Daily Maintenance Report, Sub-Report 10, 2025-05-16 (dgr10-2025-05-16.xls)",11.0,500.0,planned,True,15.0,BOILER OVERHAUL/ ANNUAL MAINTENANCE
+OBRA TPS,2025-05-14,2025-05-16,outage,low,"CEA Recommissioning Report, Sub-Report 14, 2025-05-16 (dgr14-2025-05-16.xls)",12.0,200.0,,False,2.0,P.A. FANS PROBLEM
+SINGRAULI STPS,2025-05-14,2025-05-16,outage,low,"CEA Recommissioning Report, Sub-Report 14, 2025-05-16 (dgr14-2025-05-16.xls)",6.0,500.0,,False,2.0,TUBE LKG. AT LOW TEMP. SUPERHEATER ZONE
+VINDHYACHAL STPS,2025-05-15,2025-05-16,outage,low,"CEA Recommissioning Report, Sub-Report 14, 2025-05-16 (dgr14-2025-05-16.xls)",3.0,210.0,,False,1.0,GENERATOR PROTECTION
+RIHAND STPS,2026-08-31,2026-10-08,outage,low,"CEA Daily Maintenance Report, Sub-Report 10, 2026-10-08 (dgr10-2026-10-08.xls)",3.0,500.0,planned,True,38.0,OVERHAULING WORKS
+VINDHYACHAL STPS,2026-09-01,2026-10-08,outage,low,"CEA Daily Maintenance Report, Sub-Report 10, 2026-10-08 (dgr10-2026-10-08.xls)",5.0,210.0,planned,True,37.0,OVERHAULING WORKS
+SINGRAULI STPS,2026-09-03,2026-10-08,outage,low,"CEA Daily Maintenance Report, Sub-Report 10, 2026-10-08 (dgr10-2026-10-08.xls)",1.0,200.0,planned,True,35.0,OVERHAULING WORKS
+VINDHYACHAL STPS,2026-10-06,2026-10-08,outage,low,"CEA Daily Maintenance Report, Sub-Report 10, 2026-10-08 (dgr10-2026-10-08.xls)",7.0,500.0,forced_minor,True,2.0,WATER WALL TUBE LEAKAGE
+VINDHYACHAL STPS,2026-10-06,2026-10-08,outage,low,"CEA Daily Maintenance Report, Sub-Report 10, 2026-10-08 (dgr10-2026-10-08.xls)",11.0,500.0,forced_minor,True,2.0,TURBINE VIBRATIONS HIGH
+OBRA TPS,2026-10-08,2026-10-08,outage,low,"CEA Daily Maintenance Report, Sub-Report 10, 2026-10-08 (dgr10-2026-10-08.xls)",9.0,200.0,forced_minor,True,0.0,FURNACE FIRE OUT /FLAME FAILURE

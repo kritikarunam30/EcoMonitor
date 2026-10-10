@@ -99,3 +99,35 @@ The spike ran live on 2026-10-10, the real slice is recorded and gate G1 is deci
 ### Plan v2.1 applied (2026-10-10)
 - Docs and `CLAUDE.md` replaced with v2.1; `settings.yaml` has the `flaring` section in place of `detect.flare_*`
   (Phase 1 commit). The Nightfire access check was removed from the spike and replaced as described above (this commit).
+
+---
+
+## Phase 0 — data collected — 2026-10-10
+
+- Credentials in `.env`, `secrets/ee-key.json` and `~/.cdsapirc`; all three were used successfully by the spike.
+- Registry files in `data/registry/raw/`: WRI GPPD, GEM coal, steel and cement trackers, Climate TRACE
+  (`climate_trace/`), and the World Bank flare-location file (`flares/`).
+- `scripts/cea_reports.py` turns the CEA daily reports in `data/raw/cea/` into:
+  - `data/known_events.csv`: 44 rows. 43 unit outages at the eight thermal stations of the region, from Sub-Report 10
+    (units under maintenance) and Sub-Report 14 (units recommissioned) of eight report days between 2020 and 2026,
+    plus the 2020 national lockdown. Extra columns: `unit_no`, `capacity_out_mw`, `outage_kind`, `ongoing_at_report`,
+    `duration_days`, `reason`. For an outage still running on the report day, `end` is the report day, so the true end
+    is later.
+  - `data/covariates/generation.csv`: 144 rows, eight stations on 18 days between 2021 and 2026, with
+    `monitored_capacity_mw` and `capacity_under_outage_mw` beside `generation_mwh`.
+
+### Deviations
+- `xlrd` is a dependency, to read the `.xls` reports.
+- Station names are a fixed list in `cea_reports.py` (stations whose WRI coordinates lie in the region); Phase 3
+  should replace it with the registry.
+
+### Still open
+- The lockdown row has no source link yet.
+- Many outages take out one unit of a multi-unit plant for a few days; Phase 8 should weigh events by
+  `capacity_out_mw` and `duration_days` when it reports hit rates.
+- Generation covers 18 days, which is too sparse for a daily covariate. More `dgr2` report days are needed before
+  Phase 8 can use it.
+- Climate TRACE has four assets in the region (Vindhyachal, Sasan, two at Mahan); Rihand, Singrauli, Anpara and Obra
+  are not in the download. The two sets of files in `climate_trace/` overlap: the newer ones contain the older.
+- The flare-location file has no site in the region.
+- Nightfire licence: optional, status not recorded.
