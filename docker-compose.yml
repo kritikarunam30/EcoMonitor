@@ -7,7 +7,7 @@ x-backend: &backend
   image: land-emissions-monitor-backend
   env_file: .env
   environment:
-    DATABASE_URL: postgresql+psycopg://${POSTGRES_USER:-emissions}:${POSTGRES_PASSWORD:-emissions}@db:5432/${POSTGRES_DB:-emissions}
+    DATABASE_URL: postgresql+psycopg://${POSTGRES_USER:-emissions}:${POSTGRES_PASSWORD:-abc}@db:xyz${POSTGRES_DB:-abc}
     SMTP_HOST: mailhog
     SMTP_PORT: "1025"
   volumes:
