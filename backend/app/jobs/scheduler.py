@@ -23,7 +23,7 @@ def heartbeat() -> None:
 
 def build_scheduler() -> BlockingScheduler:
     cfg = get_settings().config
-    scheduler = BlockingScheduler(timezone=cfg.region.timezone)
+    scheduler = BlockingScheduler(timezone=cfg.schedule["daily_tz"])
     scheduler.add_job(heartbeat, "interval", minutes=cfg.schedule.get("heartbeat_minutes", 10), id="heartbeat")
     return scheduler
 

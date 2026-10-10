@@ -1,0 +1,1807 @@
+{
+  "errors": {},
+  "collections": {
+    "s5p_no2_offl": {
+      "id": "COPERNICUS/S5P/OFFL/L3_NO2",
+      "ok": true,
+      "bands": [
+        "NO2_column_number_density",
+        "tropospheric_NO2_column_number_density",
+        "stratospheric_NO2_column_number_density",
+        "NO2_slant_column_number_density",
+        "tropopause_pressure",
+        "absorbing_aerosol_index",
+        "cloud_fraction",
+        "sensor_altitude",
+        "sensor_azimuth_angle",
+        "sensor_zenith_angle",
+        "solar_azimuth_angle",
+        "solar_zenith_angle"
+      ],
+      "props": [
+        "ALGORITHM_VERSION",
+        "BUILD_DATE",
+        "HARP_VERSION",
+        "INSTITUTION",
+        "L3_PROCESSING_TIME",
+        "L3_PROCESSING_VERSION",
+        "LAT_MAX",
+        "LAT_MIN",
+        "LON_MAX",
+        "LON_MIN",
+        "ORBIT",
+        "PLATFORM",
+        "PROCESSING_STATUS",
+        "PROCESSOR_VERSION",
+        "PRODUCT_ID",
+        "PRODUCT_QUALITY",
+        "SENSOR",
+        "SPATIAL_RESOLUTION",
+        "STATUS_CTMFCT",
+        "STATUS_MET_2D",
+        "STATUS_NISE__",
+        "TIME_REFERENCE_DAYS_SINCE_1950",
+        "TIME_REFERENCE_JULIAN_DAY",
+        "TRACKING_ID"
+      ],
+      "scale_m": 1113.19,
+      "crs": "EPSG:4326",
+      "latest": "2026-09-30 21:50",
+      "latest_ms": 1790805045000,
+      "latency_days": 9.4
+    },
+    "s5p_no2_nrti": {
+      "id": "COPERNICUS/S5P/NRTI/L3_NO2",
+      "ok": true,
+      "bands": [
+        "NO2_column_number_density",
+        "tropospheric_NO2_column_number_density",
+        "stratospheric_NO2_column_number_density",
+        "NO2_slant_column_number_density",
+        "tropopause_pressure",
+        "absorbing_aerosol_index",
+        "cloud_fraction",
+        "sensor_altitude",
+        "sensor_azimuth_angle",
+        "sensor_zenith_angle",
+        "solar_azimuth_angle",
+        "solar_zenith_angle"
+      ],
+      "props": [
+        "ALGORITHM_VERSION",
+        "BUILD_DATE",
+        "HARP_VERSION",
+        "INSTITUTION",
+        "L3_PROCESSING_TIME",
+        "L3_PROCESSING_VERSION",
+        "LAT_MAX",
+        "LAT_MIN",
+        "LON_MAX",
+        "LON_MIN",
+        "ORBIT",
+        "PLATFORM",
+        "PROCESSING_STATUS",
+        "PROCESSOR_VERSION",
+        "PRODUCT_ID",
+        "PRODUCT_QUALITY",
+        "SENSOR",
+        "SPATIAL_RESOLUTION",
+        "STATUS_CTMFCT",
+        "STATUS_MET_2D",
+        "STATUS_NISE__",
+        "TIME_REFERENCE_DAYS_SINCE_1950",
+        "TIME_REFERENCE_JULIAN_DAY",
+        "TRACKING_ID"
+      ],
+      "scale_m": 1113.19,
+      "crs": "EPSG:4326",
+      "latest": "2026-10-10 05:44",
+      "latest_ms": 1791611041000,
+      "latency_days": 0.08
+    },
+    "s5p_so2_offl": {
+      "id": "COPERNICUS/S5P/OFFL/L3_SO2",
+      "ok": true,
+      "bands": [
+        "SO2_column_number_density",
+        "SO2_column_number_density_amf",
+        "SO2_slant_column_number_density",
+        "absorbing_aerosol_index",
+        "cloud_fraction",
+        "sensor_azimuth_angle",
+        "sensor_zenith_angle",
+        "solar_azimuth_angle",
+        "solar_zenith_angle",
+        "SO2_column_number_density_15km"
+      ],
+      "props": [
+        "ALGORITHM_VERSION",
+        "BUILD_DATE",
+        "CLOUD_MODE",
+        "HARP_VERSION",
+        "INSTITUTION",
+        "L3_PROCESSING_TIME",
+        "L3_PROCESSING_VERSION",
+        "LAT_MAX",
+        "LAT_MIN",
+        "LON_MAX",
+        "LON_MIN",
+        "ORBIT",
+        "PLATFORM",
+        "PROCESSING_STATUS",
+        "PROCESSOR_VERSION",
+        "PRODUCT_ID",
+        "PRODUCT_QUALITY",
+        "SENSOR",
+        "SPATIAL_RESOLUTION",
+        "STATUS_AER_AI",
+        "STATUS_L2__CLOUD_",
+        "STATUS_MET_2D",
+        "STATUS_NISE__",
+        "STATUS_REFERENCE_SPECTRUM",
+        "TIME_REFERENCE_DAYS_SINCE_1950",
+        "TIME_REFERENCE_JULIAN_DAY",
+        "TRACKING_ID"
+      ],
+      "scale_m": 1113.19,
+      "crs": "EPSG:4326",
+      "latest": "2026-10-07 11:09",
+      "latest_ms": 1791371360000,
+      "latency_days": 2.85
+    },
+    "s5p_so2_nrti": {
+      "id": "COPERNICUS/S5P/NRTI/L3_SO2",
+      "ok": true,
+      "bands": [
+        "SO2_column_number_density",
+        "SO2_column_number_density_amf",
+        "SO2_slant_column_number_density",
+        "cloud_fraction",
+        "sensor_azimuth_angle",
+        "sensor_zenith_angle",
+        "solar_azimuth_angle",
+        "solar_zenith_angle",
+        "SO2_column_number_density_15km"
+      ],
+      "props": [
+        "ALGORITHM_VERSION",
+        "BUILD_DATE",
+        "CLOUD_MODE",
+        "HARP_VERSION",
+        "INSTITUTION",
+        "L3_PROCESSING_TIME",
+        "L3_PROCESSING_VERSION",
+        "LAT_MAX",
+        "LAT_MIN",
+        "LON_MAX",
+        "LON_MIN",
+        "ORBIT",
+        "PLATFORM",
+        "PROCESSING_STATUS",
+        "PROCESSOR_VERSION",
+        "PRODUCT_ID",
+        "PRODUCT_QUALITY",
+        "SENSOR",
+        "SPATIAL_RESOLUTION",
+        "STATUS_AER_AI",
+        "STATUS_L2__CLOUD_",
+        "STATUS_MET_2D",
+        "STATUS_NISE__",
+        "STATUS_REFERENCE_SPECTRUM",
+        "TIME_REFERENCE_DAYS_SINCE_1950",
+        "TIME_REFERENCE_JULIAN_DAY",
+        "TRACKING_ID"
+      ],
+      "scale_m": 1113.19,
+      "crs": "EPSG:4326",
+      "latest": "2026-10-09 07:44",
+      "latest_ms": 1791531841000,
+      "latency_days": 0.99
+    },
+    "s5p_ch4_offl": {
+      "id": "COPERNICUS/S5P/OFFL/L3_CH4",
+      "ok": true,
+      "bands": [
+        "CH4_column_volume_mixing_ratio_dry_air",
+        "aerosol_height",
+        "aerosol_optical_depth",
+        "sensor_azimuth_angle",
+        "sensor_zenith_angle",
+        "solar_azimuth_angle",
+        "solar_zenith_angle",
+        "CH4_column_volume_mixing_ratio_dry_air_bias_corrected",
+        "CH4_column_volume_mixing_ratio_dry_air_uncertainty"
+      ],
+      "props": [
+        "ALGORITHM_VERSION",
+        "BUILD_DATE",
+        "HARP_VERSION",
+        "INSTITUTION",
+        "L3_PROCESSING_TIME",
+        "L3_PROCESSING_VERSION",
+        "LAT_MAX",
+        "LAT_MIN",
+        "LON_MAX",
+        "LON_MIN",
+        "ORBIT",
+        "PLATFORM",
+        "PROCESSING_STATUS",
+        "PROCESSOR_VERSION",
+        "PRODUCT_ID",
+        "PRODUCT_QUALITY",
+        "SENSOR",
+        "SPATIAL_RESOLUTION",
+        "STATUS_MET_2D",
+        "TIME_REFERENCE_DAYS_SINCE_1950",
+        "TIME_REFERENCE_JULIAN_DAY",
+        "TRACKING_ID"
+      ],
+      "scale_m": 1113.19,
+      "crs": "EPSG:4326",
+      "latest": "2026-10-07 14:32",
+      "latest_ms": 1791383540000,
+      "latency_days": 2.71
+    },
+    "s5p_aer_ai_offl": {
+      "id": "COPERNICUS/S5P/OFFL/L3_AER_AI",
+      "ok": true,
+      "bands": [
+        "absorbing_aerosol_index",
+        "sensor_altitude",
+        "sensor_azimuth_angle",
+        "sensor_zenith_angle",
+        "solar_azimuth_angle",
+        "solar_zenith_angle"
+      ],
+      "props": [
+        "ALGORITHM_VERSION",
+        "BUILD_DATE",
+        "HARP_VERSION",
+        "INSTITUTION",
+        "L3_PROCESSING_TIME",
+        "L3_PROCESSING_VERSION",
+        "LAT_MAX",
+        "LAT_MIN",
+        "LON_MAX",
+        "LON_MIN",
+        "ORBIT",
+        "PLATFORM",
+        "PROCESSING_STATUS",
+        "PROCESSOR_VERSION",
+        "PRODUCT_ID",
+        "PRODUCT_QUALITY",
+        "SENSOR",
+        "SPATIAL_RESOLUTION",
+        "STATUS_MET_2D",
+        "TIME_REFERENCE_DAYS_SINCE_1950",
+        "TIME_REFERENCE_JULIAN_DAY",
+        "TRACKING_ID"
+      ],
+      "scale_m": 1113.19,
+      "crs": "EPSG:4326",
+      "latest": "2026-10-07 17:55",
+      "latest_ms": 1791395719000,
+      "latency_days": 2.57
+    },
+    "s5p_aer_ai_nrti": {
+      "id": "COPERNICUS/S5P/NRTI/L3_AER_AI",
+      "ok": true,
+      "bands": [
+        "absorbing_aerosol_index",
+        "sensor_altitude",
+        "sensor_azimuth_angle",
+        "sensor_zenith_angle",
+        "solar_azimuth_angle",
+        "solar_zenith_angle"
+      ],
+      "props": [
+        "ALGORITHM_VERSION",
+        "BUILD_DATE",
+        "HARP_VERSION",
+        "INSTITUTION",
+        "L3_PROCESSING_TIME",
+        "L3_PROCESSING_VERSION",
+        "LAT_MAX",
+        "LAT_MIN",
+        "LON_MAX",
+        "LON_MIN",
+        "ORBIT",
+        "PLATFORM",
+        "PROCESSING_STATUS",
+        "PROCESSOR_VERSION",
+        "PRODUCT_ID",
+        "PRODUCT_QUALITY",
+        "SENSOR",
+        "SPATIAL_RESOLUTION",
+        "STATUS_MET_2D",
+        "TIME_REFERENCE_DAYS_SINCE_1950",
+        "TIME_REFERENCE_JULIAN_DAY",
+        "TRACKING_ID"
+      ],
+      "scale_m": 1113.19,
+      "crs": "EPSG:4326",
+      "latest": "2026-10-10 05:44",
+      "latest_ms": 1791611041000,
+      "latency_days": 0.08
+    },
+    "era5_land_hourly": {
+      "id": "ECMWF/ERA5_LAND/HOURLY",
+      "ok": true,
+      "bands": [
+        "dewpoint_temperature_2m",
+        "temperature_2m",
+        "skin_temperature",
+        "soil_temperature_level_1",
+        "soil_temperature_level_2",
+        "soil_temperature_level_3",
+        "soil_temperature_level_4",
+        "lake_bottom_temperature",
+        "lake_ice_depth",
+        "lake_ice_temperature",
+        "lake_mix_layer_depth",
+        "lake_mix_layer_temperature",
+        "lake_shape_factor",
+        "lake_total_layer_temperature",
+        "snow_albedo",
+        "snow_cover",
+        "snow_density",
+        "snow_depth",
+        "snow_depth_water_equivalent",
+        "snowfall",
+        "snowmelt",
+        "temperature_of_snow_layer",
+        "skin_reservoir_content",
+        "volumetric_soil_water_layer_1",
+        "volumetric_soil_water_layer_2",
+        "volumetric_soil_water_layer_3",
+        "volumetric_soil_water_layer_4",
+        "forecast_albedo",
+        "surface_latent_heat_flux",
+        "surface_net_solar_radiation",
+        "surface_net_thermal_radiation",
+        "surface_sensible_heat_flux",
+        "surface_solar_radiation_downwards",
+        "surface_thermal_radiation_downwards",
+        "evaporation_from_bare_soil",
+        "evaporation_from_open_water_surfaces_excluding_oceans",
+        "evaporation_from_the_top_of_canopy",
+        "evaporation_from_vegetation_transpiration",
+        "potential_evaporation",
+        "runoff",
+        "snow_evaporation",
+        "sub_surface_runoff",
+        "surface_runoff",
+        "total_evaporation",
+        "u_component_of_wind_10m",
+        "v_component_of_wind_10m",
+        "surface_pressure",
+        "total_precipitation",
+        "leaf_area_index_high_vegetation",
+        "leaf_area_index_low_vegetation",
+        "snowfall_hourly",
+        "snowmelt_hourly",
+        "surface_latent_heat_flux_hourly",
+        "surface_net_solar_radiation_hourly",
+        "surface_net_thermal_radiation_hourly",
+        "surface_sensible_heat_flux_hourly",
+        "surface_solar_radiation_downwards_hourly",
+        "surface_thermal_radiation_downwards_hourly",
+        "evaporation_from_bare_soil_hourly",
+        "evaporation_from_open_water_surfaces_excluding_oceans_hourly",
+        "evaporation_from_the_top_of_canopy_hourly",
+        "evaporation_from_vegetation_transpiration_hourly",
+        "potential_evaporation_hourly",
+        "runoff_hourly",
+        "snow_evaporation_hourly",
+        "sub_surface_runoff_hourly",
+        "surface_runoff_hourly",
+        "total_evaporation_hourly",
+        "total_precipitation_hourly"
+      ],
+      "props": [
+        "hour"
+      ],
+      "scale_m": 11131.95,
+      "crs": "EPSG:4326",
+      "latest": "2026-10-04 19:00",
+      "latest_ms": 1791140400000,
+      "latency_days": 5.52
+    },
+    "era5_hourly": {
+      "id": "ECMWF/ERA5/HOURLY",
+      "ok": true,
+      "bands": [
+        "dewpoint_temperature_2m",
+        "temperature_2m",
+        "ice_temperature_layer_1",
+        "ice_temperature_layer_2",
+        "ice_temperature_layer_3",
+        "ice_temperature_layer_4",
+        "mean_sea_level_pressure",
+        "sea_surface_temperature",
+        "skin_temperature",
+        "surface_pressure",
+        "u_component_of_wind_100m",
+        "v_component_of_wind_100m",
+        "u_component_of_neutral_wind_10m",
+        "u_component_of_wind_10m",
+        "v_component_of_neutral_wind_10m",
+        "v_component_of_wind_10m",
+        "instantaneous_10m_wind_gust",
+        "mean_boundary_layer_dissipation",
+        "mean_convective_precipitation_rate",
+        "mean_convective_snowfall_rate",
+        "mean_eastward_gravity_wave_surface_stress",
+        "mean_eastward_turbulent_surface_stress",
+        "mean_evaporation_rate",
+        "mean_gravity_wave_dissipation",
+        "mean_large_scale_precipitation_fraction",
+        "mean_large_scale_precipitation_rate",
+        "mean_large_scale_snowfall_rate",
+        "mean_northward_gravity_wave_surface_stress",
+        "mean_northward_turbulent_surface_stress",
+        "mean_potential_evaporation_rate",
+        "mean_runoff_rate",
+        "mean_snow_evaporation_rate",
+        "mean_snowfall_rate",
+        "mean_snowmelt_rate",
+        "mean_sub_surface_runoff_rate",
+        "mean_surface_direct_short_wave_radiation_flux",
+        "mean_surface_direct_short_wave_radiation_flux_clear_sky",
+        "mean_surface_downward_long_wave_radiation_flux",
+        "mean_surface_downward_long_wave_radiation_flux_clear_sky",
+        "mean_surface_downward_short_wave_radiation_flux",
+        "mean_surface_downward_short_wave_radiation_flux_clear_sky",
+        "mean_surface_downward_uv_radiation_flux",
+        "mean_surface_latent_heat_flux",
+        "mean_surface_net_long_wave_radiation_flux",
+        "mean_surface_net_long_wave_radiation_flux_clear_sky",
+        "mean_surface_net_short_wave_radiation_flux",
+        "mean_surface_net_short_wave_radiation_flux_clear_sky",
+        "mean_surface_runoff_rate",
+        "mean_surface_sensible_heat_flux",
+        "mean_top_downward_short_wave_radiation_flux",
+        "mean_top_net_long_wave_radiation_flux",
+        "mean_top_net_long_wave_radiation_flux_clear_sky",
+        "mean_top_net_short_wave_radiation_flux",
+        "mean_top_net_short_wave_radiation_flux_clear_sky",
+        "mean_total_precipitation_rate",
+        "mean_vertically_integrated_moisture_divergence",
+        "clear_sky_direct_solar_radiation_at_surface",
+        "downward_uv_radiation_at_the_surface",
+        "forecast_logarithm_of_surface_roughness_for_heat",
+        "instantaneous_surface_sensible_heat_flux",
+        "near_ir_albedo_for_diffuse_radiation",
+        "near_ir_albedo_for_direct_radiation",
+        "surface_latent_heat_flux",
+        "surface_net_solar_radiation",
+        "surface_net_solar_radiation_clear_sky",
+        "surface_net_thermal_radiation",
+        "surface_net_thermal_radiation_clear_sky",
+        "surface_sensible_heat_flux",
+        "surface_solar_radiation_downward_clear_sky",
+        "surface_solar_radiation_downwards",
+        "surface_thermal_radiation_downward_clear_sky",
+        "surface_thermal_radiation_downwards",
+        "toa_incident_solar_radiation",
+        "top_net_solar_radiation",
+        "top_net_solar_radiation_clear_sky",
+        "top_net_thermal_radiation",
+        "top_net_thermal_radiation_clear_sky",
+        "total_sky_direct_solar_radiation_at_surface",
+        "uv_visible_albedo_for_diffuse_radiation",
+        "uv_visible_albedo_for_direct_radiation",
+        "cloud_base_height",
+        "high_cloud_cover",
+        "low_cloud_cover",
+        "medium_cloud_cover",
+        "total_cloud_cover",
+        "total_column_cloud_ice_water",
+        "total_column_cloud_liquid_water",
+        "lake_bottom_temperature",
+        "lake_cover",
+        "lake_depth",
+        "lake_ice_depth",
+        "lake_ice_temperature",
+        "lake_mix_layer_depth",
+        "lake_mix_layer_temperature",
+        "lake_shape_factor",
+        "lake_total_layer_temperature",
+        "evaporation",
+        "potential_evaporation",
+        "runoff",
+        "sub_surface_runoff",
+        "surface_runoff",
+        "convective_precipitation",
+        "convective_rain_rate",
+        "instantaneous_large_scale_surface_precipitation_fraction",
+        "large_scale_precipitation",
+        "large_scale_precipitation_fraction",
+        "large_scale_rain_rate",
+        "precipitation_type",
+        "total_column_rain_water",
+        "total_precipitation",
+        "convective_snowfall",
+        "convective_snowfall_rate_water_equivalent",
+        "large_scale_snowfall",
+        "large_scale_snowfall_rate_water_equivalent",
+        "snow_albedo",
+        "snow_density",
+        "snow_depth",
+        "snow_evaporation",
+        "snowfall",
+        "snowmelt",
+        "temperature_of_snow_layer",
+        "total_column_snow_water",
+        "soil_temperature_level_1",
+        "soil_temperature_level_2",
+        "soil_temperature_level_3",
+        "soil_temperature_level_4",
+        "soil_type",
+        "vertical_integral_of_divergence_of_cloud_frozen_water_flux",
+        "vertical_integral_of_divergence_of_cloud_liquid_water_flux",
+        "vertical_integral_of_divergence_of_geopotential_flux",
+        "vertical_integral_of_divergence_of_kinetic_energy_flux",
+        "vertical_integral_of_divergence_of_mass_flux",
+        "vertical_integral_of_divergence_of_moisture_flux",
+        "vertical_integral_of_divergence_of_ozone_flux",
+        "vertical_integral_of_divergence_of_thermal_energy_flux",
+        "vertical_integral_of_divergence_of_total_energy_flux",
+        "vertical_integral_of_eastward_cloud_frozen_water_flux",
+        "vertical_integral_of_eastward_cloud_liquid_water_flux",
+        "vertical_integral_of_eastward_geopotential_flux",
+        "vertical_integral_of_eastward_heat_flux",
+        "vertical_integral_of_eastward_kinetic_energy_flux",
+        "vertical_integral_of_eastward_mass_flux",
+        "vertical_integral_of_eastward_ozone_flux",
+        "vertical_integral_of_eastward_total_energy_flux",
+        "vertical_integral_of_eastward_water_vapour_flux",
+        "vertical_integral_of_energy_conversion",
+        "vertical_integral_of_kinetic_energy",
+        "vertical_integral_of_mass_of_atmosphere",
+        "vertical_integral_of_mass_tendency",
+        "vertical_integral_of_northward_cloud_frozen_water_flux",
+        "vertical_integral_of_northward_cloud_liquid_water_flux",
+        "vertical_integral_of_northward_geopotential_flux",
+        "vertical_integral_of_northward_heat_flux",
+        "vertical_integral_of_northward_kinetic_energy_flux",
+        "vertical_integral_of_northward_mass_flux",
+        "vertical_integral_of_northward_ozone_flux",
+        "high_vegetation_cover",
+        "leaf_area_index_high_vegetation",
+        "leaf_area_index_low_vegetation",
+        "low_vegetation_cover",
+        "type_of_high_vegetation",
+        "type_of_low_vegetation",
+        "air_density_over_the_oceans",
+        "coefficient_of_drag_with_waves",
+        "free_convective_velocity_over_the_oceans",
+        "maximum_individual_wave_height",
+        "mean_direction_of_total_swell",
+        "mean_direction_of_wind_waves",
+        "mean_period_of_total_swell",
+        "mean_period_of_wind_waves",
+        "mean_square_slope_of_waves",
+        "mean_wave_direction",
+        "mean_wave_direction_of_first_swell_partition",
+        "mean_wave_direction_of_second_swell_partition",
+        "mean_wave_direction_of_third_swell_partition",
+        "mean_wave_period",
+        "mean_wave_period_based_on_first_moment",
+        "mean_wave_period_based_on_first_moment_for_swell",
+        "mean_wave_period_based_on_first_moment_for_wind_waves",
+        "mean_wave_period_based_on_second_moment_for_swell",
+        "mean_wave_period_based_on_second_moment_for_wind_waves",
+        "mean_wave_period_of_first_swell_partition",
+        "mean_wave_period_of_second_swell_partition",
+        "mean_wave_period_of_third_swell_partition",
+        "mean_zero_crossing_wave_period",
+        "model_bathymetry",
+        "normalized_energy_flux_into_ocean",
+        "normalized_energy_flux_into_waves",
+        "normalized_stress_into_ocean",
+        "ocean_surface_stress_equivalent_10m_neutral_wind_direction",
+        "ocean_surface_stress_equivalent_10m_neutral_wind_speed",
+        "peak_wave_period",
+        "period_corresponding_to_maximum_individual_wave_height",
+        "significant_height_of_combined_wind_waves_and_swell",
+        "significant_height_of_total_swell",
+        "significant_height_of_wind_waves",
+        "significant_wave_height_of_first_swell_partition",
+        "significant_wave_height_of_second_swell_partition",
+        "significant_wave_height_of_third_swell_partition",
+        "angle_of_sub_gridscale_orography",
+        "anisotropy_of_sub_gridscale_orography",
+        "benjamin_feir_index",
+        "boundary_layer_dissipation",
+        "boundary_layer_height",
+        "charnock",
+        "convective_available_potential_energy",
+        "convective_inhibition",
+        "duct_base_height",
+        "eastward_gravity_wave_surface_stress",
+        "eastward_turbulent_surface_stress",
+        "forecast_albedo",
+        "forecast_surface_roughness",
+        "friction_velocity",
+        "gravity_wave_dissipation",
+        "instantaneous_eastward_turbulent_surface_stress",
+        "instantaneous_moisture_flux",
+        "instantaneous_northward_turbulent_surface_stress",
+        "k_index",
+        "land_sea_mask",
+        "mean_vertical_gradient_of_refractivity_inside_trapping_layer",
+        "minimum_vertical_gradient_of_refractivity_inside_trapping_layer",
+        "northward_gravity_wave_surface_stress",
+        "northward_turbulent_surface_stress",
+        "sea_ice_cover",
+        "skin_reservoir_content",
+        "slope_of_sub_gridscale_orography",
+        "standard_deviation_of_filtered_subgrid_orography",
+        "standard_deviation_of_orography",
+        "total_column_ozone",
+        "total_column_supercooled_liquid_water",
+        "total_column_water",
+        "total_column_water_vapour",
+        "total_totals_index",
+        "trapping_layer_base_height",
+        "trapping_layer_top_height",
+        "u_component_stokes_drift",
+        "v_component_stokes_drift",
+        "vertical_integral_of_northward_total_energy_flux",
+        "vertical_integral_of_northward_water_vapour_flux",
+        "vertical_integral_of_potential_and_internal_energy",
+        "vertical_integral_of_potential_internal_and_latent_energy",
+        "vertical_integral_of_temperature",
+        "vertical_integral_of_thermal_energy",
+        "vertical_integral_of_total_energy",
+        "vertically_integrated_moisture_divergence",
+        "volumetric_soil_water_layer_1",
+        "volumetric_soil_water_layer_2",
+        "volumetric_soil_water_layer_3",
+        "volumetric_soil_water_layer_4",
+        "wave_spectral_directional_width",
+        "wave_spectral_directional_width_for_swell",
+        "wave_spectral_directional_width_for_wind_waves",
+        "wave_spectral_kurtosis",
+        "wave_spectral_peakedness",
+        "wave_spectral_skewness",
+        "zero_degree_level",
+        "wind_gust_since_previous_post_processing_10m",
+        "geopotential",
+        "maximum_2m_temperature_since_previous_post_processing",
+        "maximum_total_precipitation_rate_since_previous_post_processing",
+        "minimum_2m_temperature_since_previous_post_processing",
+        "minimum_total_precipitation_rate_since_previous_post_processing",
+        "divergence_500hPa",
+        "divergence_850hPa",
+        "fraction_of_cloud_cover_500hPa",
+        "fraction_of_cloud_cover_850hPa",
+        "ozone_mass_mixing_ratio_500hPa",
+        "ozone_mass_mixing_ratio_850hPa",
+        "potential_vorticity_500hPa",
+        "potential_vorticity_850hPa",
+        "relative_humidity_500hPa",
+        "relative_humidity_850hPa",
+        "specific_cloud_ice_water_content_500hPa",
+        "specific_cloud_ice_water_content_850hPa",
+        "specific_cloud_liquid_water_content_500hPa",
+        "specific_cloud_liquid_water_content_850hPa",
+        "specific_humidity_500hPa",
+        "specific_humidity_850hPa",
+        "specific_rain_water_content_500hPa",
+        "specific_rain_water_content_850hPa",
+        "specific_snow_water_content_500hPa",
+        "specific_snow_water_content_850hPa",
+        "temperature_500hPa",
+        "temperature_850hPa",
+        "u_component_of_wind_500hPa",
+        "u_component_of_wind_850hPa",
+        "v_component_of_wind_500hPa",
+        "v_component_of_wind_850hPa",
+        "vertical_velocity_500hPa",
+        "vertical_velocity_850hPa",
+        "vorticity_500hPa",
+        "vorticity_850hPa"
+      ],
+      "props": [
+        "hour"
+      ],
+      "scale_m": 27829.87,
+      "crs": "EPSG:4326",
+      "latest": "2026-10-03 22:00",
+      "latest_ms": 1791064800000,
+      "latency_days": 6.4
+    },
+    "gfs": {
+      "id": "NOAA/GFS0P25",
+      "ok": true,
+      "bands": [
+        "temperature_2m_above_ground",
+        "specific_humidity_2m_above_ground",
+        "relative_humidity_2m_above_ground",
+        "u_component_of_wind_10m_above_ground",
+        "v_component_of_wind_10m_above_ground",
+        "total_precipitation_surface",
+        "precipitable_water_entire_atmosphere",
+        "total_cloud_cover_entire_atmosphere",
+        "downward_shortwave_radiation_flux"
+      ],
+      "props": [
+        "creation_time",
+        "forecast_hours",
+        "forecast_time"
+      ],
+      "scale_m": 27799.73,
+      "crs": null,
+      "latest": "2026-10-10 00:00",
+      "latest_ms": 1791590400000,
+      "latency_days": 0.31
+    },
+    "s2_sr": {
+      "id": "COPERNICUS/S2_SR_HARMONIZED",
+      "ok": true,
+      "bands": [
+        "B1",
+        "B2",
+        "B3",
+        "B4",
+        "B5",
+        "B6",
+        "B7",
+        "B8",
+        "B8A",
+        "B9",
+        "B11",
+        "B12",
+        "AOT",
+        "WVP",
+        "SCL",
+        "TCI_R",
+        "TCI_G",
+        "TCI_B",
+        "MSK_CLDPRB",
+        "MSK_SNWPRB",
+        "QA10",
+        "QA20",
+        "QA60",
+        "MSK_CLASSI_OPAQUE",
+        "MSK_CLASSI_CIRRUS",
+        "MSK_CLASSI_SNOW_ICE"
+      ],
+      "props": [
+        "AOT_RETRIEVAL_ACCURACY",
+        "AOT_RETRIEVAL_METHOD",
+        "BOA_ADD_OFFSET_B1",
+        "BOA_ADD_OFFSET_B10",
+        "BOA_ADD_OFFSET_B11",
+        "BOA_ADD_OFFSET_B12",
+        "BOA_ADD_OFFSET_B2",
+        "BOA_ADD_OFFSET_B3",
+        "BOA_ADD_OFFSET_B4",
+        "BOA_ADD_OFFSET_B5",
+        "BOA_ADD_OFFSET_B6",
+        "BOA_ADD_OFFSET_B7",
+        "BOA_ADD_OFFSET_B8",
+        "BOA_ADD_OFFSET_B8A",
+        "BOA_ADD_OFFSET_B9",
+        "CLOUDY_PIXEL_OVER_LAND_PERCENTAGE",
+        "CLOUDY_PIXEL_PERCENTAGE",
+        "CLOUD_COVERAGE_ASSESSMENT",
+        "CLOUD_SHADOW_PERCENTAGE",
+        "DARK_FEATURES_PERCENTAGE",
+        "DATASTRIP_ID",
+        "DATATAKE_IDENTIFIER",
+        "DATATAKE_TYPE",
+        "DEGRADED_MSI_DATA_PERCENTAGE",
+        "FORMAT_CORRECTNESS",
+        "GENERAL_QUALITY",
+        "GENERATION_TIME",
+        "GEOMETRIC_QUALITY",
+        "GRANULE_ID",
+        "GRANULE_MEAN_AOT",
+        "GRANULE_MEAN_WV",
+        "HIGH_PROBA_CLOUDS_PERCENTAGE",
+        "L2A_QUALITY",
+        "MEAN_INCIDENCE_AZIMUTH_ANGLE_B1",
+        "MEAN_INCIDENCE_AZIMUTH_ANGLE_B10",
+        "MEAN_INCIDENCE_AZIMUTH_ANGLE_B11",
+        "MEAN_INCIDENCE_AZIMUTH_ANGLE_B12",
+        "MEAN_INCIDENCE_AZIMUTH_ANGLE_B2",
+        "MEAN_INCIDENCE_AZIMUTH_ANGLE_B3",
+        "MEAN_INCIDENCE_AZIMUTH_ANGLE_B4",
+        "MEAN_INCIDENCE_AZIMUTH_ANGLE_B5",
+        "MEAN_INCIDENCE_AZIMUTH_ANGLE_B6",
+        "MEAN_INCIDENCE_AZIMUTH_ANGLE_B7",
+        "MEAN_INCIDENCE_AZIMUTH_ANGLE_B8",
+        "MEAN_INCIDENCE_AZIMUTH_ANGLE_B8A",
+        "MEAN_INCIDENCE_AZIMUTH_ANGLE_B9",
+        "MEAN_INCIDENCE_ZENITH_ANGLE_B1",
+        "MEAN_INCIDENCE_ZENITH_ANGLE_B10",
+        "MEAN_INCIDENCE_ZENITH_ANGLE_B11",
+        "MEAN_INCIDENCE_ZENITH_ANGLE_B12",
+        "MEAN_INCIDENCE_ZENITH_ANGLE_B2",
+        "MEAN_INCIDENCE_ZENITH_ANGLE_B3",
+        "MEAN_INCIDENCE_ZENITH_ANGLE_B4",
+        "MEAN_INCIDENCE_ZENITH_ANGLE_B5",
+        "MEAN_INCIDENCE_ZENITH_ANGLE_B6",
+        "MEAN_INCIDENCE_ZENITH_ANGLE_B7",
+        "MEAN_INCIDENCE_ZENITH_ANGLE_B8",
+        "MEAN_INCIDENCE_ZENITH_ANGLE_B8A",
+        "MEAN_INCIDENCE_ZENITH_ANGLE_B9",
+        "MEAN_SOLAR_AZIMUTH_ANGLE",
+        "MEAN_SOLAR_ZENITH_ANGLE",
+        "MEDIUM_PROBA_CLOUDS_PERCENTAGE",
+        "MGRS_TILE",
+        "NODATA_PIXEL_PERCENTAGE",
+        "NOT_VEGETATED_PERCENTAGE",
+        "OZONE_SOURCE",
+        "OZONE_VALUE",
+        "PROCESSING_BASELINE",
+        "PRODUCT_ID",
+        "RADIATIVE_TRANSFER_ACCURACY",
+        "RADIOMETRIC_QUALITY",
+        "REFLECTANCE_CONVERSION_CORRECTION",
+        "SATURATED_DEFECTIVE_PIXEL_PERCENTAGE",
+        "SENSING_ORBIT_DIRECTION",
+        "SENSING_ORBIT_NUMBER",
+        "SENSOR_QUALITY",
+        "SNOW_ICE_PERCENTAGE",
+        "SOLAR_IRRADIANCE_B1",
+        "SOLAR_IRRADIANCE_B10",
+        "SOLAR_IRRADIANCE_B11",
+        "SOLAR_IRRADIANCE_B12",
+        "SOLAR_IRRADIANCE_B2",
+        "SOLAR_IRRADIANCE_B3",
+        "SOLAR_IRRADIANCE_B4",
+        "SOLAR_IRRADIANCE_B5",
+        "SOLAR_IRRADIANCE_B6",
+        "SOLAR_IRRADIANCE_B7",
+        "SOLAR_IRRADIANCE_B8",
+        "SOLAR_IRRADIANCE_B8A",
+        "SOLAR_IRRADIANCE_B9",
+        "SPACECRAFT_NAME",
+        "THIN_CIRRUS_PERCENTAGE",
+        "UNCLASSIFIED_PERCENTAGE",
+        "VEGETATION_PERCENTAGE",
+        "WATER_PERCENTAGE",
+        "WATER_VAPOUR_RETRIEVAL_ACCURACY"
+      ],
+      "scale_m": 60,
+      "crs": "EPSG:32633",
+      "latest": "2026-10-09 05:22",
+      "latest_ms": 1791523330186,
+      "latency_days": 1.09
+    },
+    "worldcover": {
+      "id": "ESA/WorldCover/v200",
+      "ok": true,
+      "bands": [
+        "Map"
+      ],
+      "props": [
+        "Map_class_names",
+        "Map_class_palette",
+        "Map_class_values"
+      ],
+      "scale_m": 9.28,
+      "crs": "EPSG:4326",
+      "latest": "2021-01-01 00:00",
+      "latest_ms": 1609459200000,
+      "latency_days": 2108.31
+    },
+    "worldpop": {
+      "id": "WorldPop/GP/100m/pop",
+      "ok": true,
+      "bands": [
+        "population"
+      ],
+      "props": [
+        "country",
+        "year"
+      ],
+      "scale_m": 92.77,
+      "crs": "EPSG:4326",
+      "latest": "2020-01-01 00:00",
+      "latest_ms": 1577836800000,
+      "latency_days": 2474.31
+    },
+    "modis_burned": {
+      "id": "MODIS/061/MCD64A1",
+      "ok": true,
+      "bands": [
+        "BurnDate",
+        "Uncertainty",
+        "QA",
+        "FirstDay",
+        "LastDay"
+      ],
+      "props": [
+        "google:max_source_file_timestamp",
+        "num_tiles"
+      ],
+      "scale_m": 463.31,
+      "crs": "SR-ORG:6974",
+      "latest": "2026-07-01 00:00",
+      "latest_ms": 1782864000000,
+      "latency_days": 101.31
+    }
+  },
+  "products": {
+    "no2": {
+      "collection_key": "s5p_no2_offl",
+      "id": "COPERNICUS/S5P/OFFL/L3_NO2",
+      "band": "tropospheric_NO2_column_number_density",
+      "cloud_band": "cloud_fraction",
+      "scale_m": 1113.19,
+      "note": null
+    },
+    "no2_nrti": {
+      "collection_key": "s5p_no2_nrti",
+      "id": "COPERNICUS/S5P/NRTI/L3_NO2",
+      "band": "tropospheric_NO2_column_number_density",
+      "cloud_band": "cloud_fraction",
+      "scale_m": 1113.19,
+      "note": null
+    },
+    "so2": {
+      "collection_key": "s5p_so2_offl",
+      "id": "COPERNICUS/S5P/OFFL/L3_SO2",
+      "band": "SO2_column_number_density",
+      "cloud_band": "cloud_fraction",
+      "scale_m": 1113.19,
+      "note": null
+    },
+    "so2_nrti": {
+      "collection_key": "s5p_so2_nrti",
+      "id": "COPERNICUS/S5P/NRTI/L3_SO2",
+      "band": "SO2_column_number_density",
+      "cloud_band": "cloud_fraction",
+      "scale_m": 1113.19,
+      "note": null
+    },
+    "ch4": {
+      "collection_key": "s5p_ch4_offl",
+      "id": "COPERNICUS/S5P/OFFL/L3_CH4",
+      "band": "CH4_column_volume_mixing_ratio_dry_air",
+      "cloud_band": null,
+      "scale_m": 1113.19,
+      "note": "several bands match /CH4_column_volume_mixing_ratio/; the first was taken"
+    },
+    "aer_ai": {
+      "collection_key": "s5p_aer_ai_offl",
+      "id": "COPERNICUS/S5P/OFFL/L3_AER_AI",
+      "band": "absorbing_aerosol_index",
+      "cloud_band": null,
+      "scale_m": 1113.19,
+      "note": null
+    },
+    "aer_ai_nrti": {
+      "collection_key": "s5p_aer_ai_nrti",
+      "id": "COPERNICUS/S5P/NRTI/L3_AER_AI",
+      "band": "absorbing_aerosol_index",
+      "cloud_band": null,
+      "scale_m": 1113.19,
+      "note": null
+    }
+  },
+  "s5p_qa": {
+    "s5p_no2_offl": {
+      "qa_bands": [
+        "cloud_fraction"
+      ],
+      "masked_share": 0.8021814187068425
+    },
+    "s5p_no2_nrti": {
+      "qa_bands": [
+        "cloud_fraction"
+      ]
+    },
+    "s5p_so2_offl": {
+      "qa_bands": [
+        "cloud_fraction"
+      ],
+      "masked_share": 0.48414940364092907
+    },
+    "s5p_so2_nrti": {
+      "qa_bands": [
+        "cloud_fraction"
+      ]
+    },
+    "s5p_ch4_offl": {
+      "qa_bands": []
+    },
+    "s5p_aer_ai_offl": {
+      "qa_bands": []
+    },
+    "s5p_aer_ai_nrti": {
+      "qa_bands": []
+    }
+  },
+  "run": {
+    "started_at": "2026-10-10 07:50",
+    "region": "singrauli",
+    "bbox": [
+      82.0,
+      23.6,
+      83.4,
+      24.8
+    ],
+    "centroid": [
+      82.7,
+      24.2
+    ],
+    "window_km": 120,
+    "days": 120,
+    "start": "2026-06-03",
+    "end": "2026-09-30",
+    "ee_project": "land-emission-monitor",
+    "quota_tier": null,
+    "analysis_centre": [
+      82.7558,
+      24.131
+    ]
+  },
+  "cds": {
+    "dataset": "reanalysis-era5-single-levels",
+    "variables": [
+      "100m_u_component_of_wind",
+      "100m_v_component_of_wind"
+    ],
+    "seconds for one small request": 55.3,
+    "newest day retrieved": "2026-10-04",
+    "latency (days), at most": 6,
+    "variables in the file": [
+      "u100",
+      "v100"
+    ],
+    "dimensions in the file": {
+      "valid_time": 1,
+      "latitude": 5,
+      "longitude": 6
+    },
+    "request that worked": "{\"product_type\": [\"reanalysis\"], \"variable\": [\"100m_u_component_of_wind\", \"100m_v_component_of_wind\"], \"year\": [\"2026\"], \"month\": [\"10\"], \"day\": [\"04\"], \"time\": [\"08:00\"], \"area\": [24.8, 82.0, 23.6, 83.4], \"data_format\": \"netcdf\", \"download_format\": \"unarchived\"}",
+    "access": "ok"
+  },
+  "valid_days": {
+    "no2": {
+      "min_fraction": 0.5,
+      "months": [
+        {
+          "month": "2025-10",
+          "days": 31,
+          "days_ok": 8,
+          "fraction_ok_030": 0.3870967742,
+          "fraction_ok": 0.2580645161
+        },
+        {
+          "month": "2025-11",
+          "days": 30,
+          "days_ok": 27,
+          "fraction_ok_030": 0.9,
+          "fraction_ok": 0.9
+        },
+        {
+          "month": "2025-12",
+          "days": 31,
+          "days_ok": 28,
+          "fraction_ok_030": 0.9677419355,
+          "fraction_ok": 0.9032258065
+        },
+        {
+          "month": "2026-01",
+          "days": 31,
+          "days_ok": 26,
+          "fraction_ok_030": 0.8709677419,
+          "fraction_ok": 0.8387096774
+        },
+        {
+          "month": "2026-02",
+          "days": 28,
+          "days_ok": 25,
+          "fraction_ok_030": 0.9285714286,
+          "fraction_ok": 0.8928571429
+        },
+        {
+          "month": "2026-03",
+          "days": 31,
+          "days_ok": 27,
+          "fraction_ok_030": 0.935483871,
+          "fraction_ok": 0.8709677419
+        },
+        {
+          "month": "2026-04",
+          "days": 30,
+          "days_ok": 27,
+          "fraction_ok_030": 0.9,
+          "fraction_ok": 0.9
+        },
+        {
+          "month": "2026-05",
+          "days": 31,
+          "days_ok": 28,
+          "fraction_ok_030": 1.0,
+          "fraction_ok": 0.9032258065
+        },
+        {
+          "month": "2026-06",
+          "days": 30,
+          "days_ok": 19,
+          "fraction_ok_030": 0.7666666667,
+          "fraction_ok": 0.6333333333
+        },
+        {
+          "month": "2026-07",
+          "days": 31,
+          "days_ok": 4,
+          "fraction_ok_030": 0.2580645161,
+          "fraction_ok": 0.1290322581
+        },
+        {
+          "month": "2026-08",
+          "days": 31,
+          "days_ok": 3,
+          "fraction_ok_030": 0.1612903226,
+          "fraction_ok": 0.0967741935
+        },
+        {
+          "month": "2026-09",
+          "days": 30,
+          "days_ok": 6,
+          "fraction_ok_030": 0.3,
+          "fraction_ok": 0.2
+        }
+      ]
+    },
+    "so2": {
+      "min_fraction": 0.5,
+      "months": [
+        {
+          "month": "2026-06",
+          "days": 28,
+          "days_ok": 17,
+          "fraction_ok": 0.6071428571,
+          "fraction_ok_030": 0.7142857143
+        },
+        {
+          "month": "2026-07",
+          "days": 31,
+          "days_ok": 4,
+          "fraction_ok": 0.1290322581,
+          "fraction_ok_030": 0.2258064516
+        },
+        {
+          "month": "2026-08",
+          "days": 31,
+          "days_ok": 2,
+          "fraction_ok": 0.064516129,
+          "fraction_ok_030": 0.1612903226
+        },
+        {
+          "month": "2026-09",
+          "days": 30,
+          "days_ok": 7,
+          "fraction_ok": 0.2333333333,
+          "fraction_ok_030": 0.3333333333
+        }
+      ]
+    }
+  },
+  "null_buffer": {
+    "days": 120,
+    "days_tested": 33,
+    "z_bg_min": 2.0,
+    "days_detected": 31,
+    "median_excess": 0.00014284962708188687,
+    "median_sigma": 1.911408115593076e-05,
+    "median_z": 7.473528333197599
+  },
+  "so2_window": [
+    {
+      "plant": "Vindhyachal",
+      "window_end": "2026-09-30",
+      "wind_source": "era5_hourly 100 m",
+      "n_valid_days": 6,
+      "mean": 0.00019184668265855484,
+      "z": 3.660406156063179,
+      "p5": 0.00012440277976869159
+    },
+    {
+      "plant": "Vindhyachal",
+      "window_end": "2026-09-02",
+      "wind_source": "era5_hourly 100 m",
+      "n_valid_days": 3,
+      "mean": 1.2037948181387037e-05,
+      "z": 0.23249248653867963,
+      "p5": -0.00032428272485655424
+    },
+    {
+      "plant": "Vindhyachal",
+      "window_end": "2026-08-05",
+      "wind_source": "era5_hourly 100 m",
+      "n_valid_days": 1,
+      "mean": NaN,
+      "z": NaN,
+      "p5": NaN
+    },
+    {
+      "plant": "Vindhyachal",
+      "window_end": "2026-07-08",
+      "wind_source": "era5_hourly 100 m",
+      "n_valid_days": 10,
+      "mean": 0.00027443173821666277,
+      "z": 4.833253936278832,
+      "p5": 0.00018080852540151683
+    },
+    {
+      "plant": "Sasan UMPP",
+      "window_end": "2026-09-30",
+      "wind_source": "era5_hourly 100 m",
+      "n_valid_days": 4,
+      "mean": -0.00011513506706251064,
+      "z": -0.7261943090699747,
+      "p5": -0.00034661499466892565
+    },
+    {
+      "plant": "Sasan UMPP",
+      "window_end": "2026-09-02",
+      "wind_source": "era5_hourly 100 m",
+      "n_valid_days": 0,
+      "mean": NaN,
+      "z": NaN,
+      "p5": NaN
+    },
+    {
+      "plant": "Sasan UMPP",
+      "window_end": "2026-08-05",
+      "wind_source": "era5_hourly 100 m",
+      "n_valid_days": 2,
+      "mean": 6.141163498796232e-05,
+      "z": 0.5970859714409477,
+      "p5": -0.00016735028475522995
+    },
+    {
+      "plant": "Sasan UMPP",
+      "window_end": "2026-07-08",
+      "wind_source": "era5_hourly 100 m",
+      "n_valid_days": 8,
+      "mean": 7.323081717913738e-05,
+      "z": 1.0114715932292386,
+      "p5": -3.347641477375873e-05
+    },
+    {
+      "plant": "Rihand Thermal Power Station",
+      "window_end": "2026-09-30",
+      "wind_source": "era5_hourly 100 m",
+      "n_valid_days": 6,
+      "mean": 7.298992325862248e-05,
+      "z": 0.5717644054654184,
+      "p5": -0.00014606320437451358
+    },
+    {
+      "plant": "Rihand Thermal Power Station",
+      "window_end": "2026-09-02",
+      "wind_source": "era5_hourly 100 m",
+      "n_valid_days": 3,
+      "mean": -0.00017748160098562948,
+      "z": -0.41653582912059767,
+      "p5": -0.0005530532228779824
+    },
+    {
+      "plant": "Rihand Thermal Power Station",
+      "window_end": "2026-08-05",
+      "wind_source": "era5_hourly 100 m",
+      "n_valid_days": 2,
+      "mean": 4.3369338527554646e-05,
+      "z": 0.5785798484774416,
+      "p5": -0.0001259743221453391
+    },
+    {
+      "plant": "Rihand Thermal Power Station",
+      "window_end": "2026-07-08",
+      "wind_source": "era5_hourly 100 m",
+      "n_valid_days": 9,
+      "mean": 0.00013577689499773746,
+      "z": 3.234075468990035,
+      "p5": 7.060709014518175e-05
+    }
+  ],
+  "timing": [
+    {
+      "test": "small reduceRegion calls, one day and one buffer each",
+      "calls": 100,
+      "seconds": 61.3
+    },
+    {
+      "test": "one request, reduceRegions mapped over 90 days x 20 buffers",
+      "calls": 1,
+      "error": "Too many concurrent aggregations.",
+      "seconds": 40.1
+    },
+    {
+      "test": "one request, one reduceRegions over 90 days stacked as bands",
+      "calls": 1,
+      "rows": 1800,
+      "seconds": 3.2
+    }
+  ],
+  "firms": {
+    "sources": {
+      "VIIRS_SNPP_NRT": {
+        "ok": true,
+        "available": "2026-07-01 to 2026-10-09",
+        "day_range": 5,
+        "rows_90d": 199,
+        "columns": [
+          "latitude",
+          "longitude",
+          "bright_ti4",
+          "scan",
+          "track",
+          "acq_date",
+          "acq_time",
+          "satellite",
+          "instrument",
+          "confidence",
+          "version",
+          "bright_ti5",
+          "frp",
+          "daynight"
+        ],
+        "near_plants": [
+          {
+            "plant": "Vindhyachal",
+            "detections": 0,
+            "nights": 0,
+            "max_nights_in_window": 0,
+            "max_nights_in_window_min_frp": 0,
+            "median_frp_mw": null
+          },
+          {
+            "plant": "Sasan UMPP",
+            "detections": 0,
+            "nights": 0,
+            "max_nights_in_window": 0,
+            "max_nights_in_window_min_frp": 0,
+            "median_frp_mw": null
+          },
+          {
+            "plant": "Rihand Thermal Power Station",
+            "detections": 0,
+            "nights": 0,
+            "max_nights_in_window": 0,
+            "max_nights_in_window_min_frp": 0,
+            "median_frp_mw": null
+          },
+          {
+            "plant": "Obra Thermal Power Station",
+            "detections": 0,
+            "nights": 0,
+            "max_nights_in_window": 0,
+            "max_nights_in_window_min_frp": 0,
+            "median_frp_mw": null
+          },
+          {
+            "plant": "Singrauli Super Thermal Power Station",
+            "detections": 0,
+            "nights": 0,
+            "max_nights_in_window": 0,
+            "max_nights_in_window_min_frp": 0,
+            "median_frp_mw": null
+          }
+        ]
+      },
+      "VIIRS_NOAA20_NRT": {
+        "ok": true,
+        "available": "2026-07-01 to 2026-10-10",
+        "day_range": 5,
+        "rows_90d": 185,
+        "columns": [
+          "latitude",
+          "longitude",
+          "bright_ti4",
+          "scan",
+          "track",
+          "acq_date",
+          "acq_time",
+          "satellite",
+          "instrument",
+          "confidence",
+          "version",
+          "bright_ti5",
+          "frp",
+          "daynight"
+        ],
+        "near_plants": [
+          {
+            "plant": "Vindhyachal",
+            "detections": 0,
+            "nights": 0,
+            "max_nights_in_window": 0,
+            "max_nights_in_window_min_frp": 0,
+            "median_frp_mw": null
+          },
+          {
+            "plant": "Sasan UMPP",
+            "detections": 0,
+            "nights": 0,
+            "max_nights_in_window": 0,
+            "max_nights_in_window_min_frp": 0,
+            "median_frp_mw": null
+          },
+          {
+            "plant": "Rihand Thermal Power Station",
+            "detections": 0,
+            "nights": 0,
+            "max_nights_in_window": 0,
+            "max_nights_in_window_min_frp": 0,
+            "median_frp_mw": null
+          },
+          {
+            "plant": "Obra Thermal Power Station",
+            "detections": 0,
+            "nights": 0,
+            "max_nights_in_window": 0,
+            "max_nights_in_window_min_frp": 0,
+            "median_frp_mw": null
+          },
+          {
+            "plant": "Singrauli Super Thermal Power Station",
+            "detections": 0,
+            "nights": 0,
+            "max_nights_in_window": 0,
+            "max_nights_in_window_min_frp": 0,
+            "median_frp_mw": null
+          }
+        ]
+      },
+      "VIIRS_SNPP_SP": {
+        "ok": true,
+        "available": "2012-01-20 to 2026-06-30",
+        "day_range": 5,
+        "rows_90d": 0,
+        "columns": [
+          "latitude",
+          "longitude",
+          "bright_ti4",
+          "scan",
+          "track",
+          "acq_date",
+          "acq_time",
+          "satellite",
+          "instrument",
+          "confidence",
+          "version",
+          "bright_ti5",
+          "frp",
+          "daynight",
+          "type"
+        ],
+        "near_plants": [
+          {
+            "plant": "Vindhyachal",
+            "detections": 0,
+            "nights": 0,
+            "max_nights_in_window": 0,
+            "max_nights_in_window_min_frp": 0,
+            "median_frp_mw": null
+          },
+          {
+            "plant": "Sasan UMPP",
+            "detections": 0,
+            "nights": 0,
+            "max_nights_in_window": 0,
+            "max_nights_in_window_min_frp": 0,
+            "median_frp_mw": null
+          },
+          {
+            "plant": "Rihand Thermal Power Station",
+            "detections": 0,
+            "nights": 0,
+            "max_nights_in_window": 0,
+            "max_nights_in_window_min_frp": 0,
+            "median_frp_mw": null
+          },
+          {
+            "plant": "Obra Thermal Power Station",
+            "detections": 0,
+            "nights": 0,
+            "max_nights_in_window": 0,
+            "max_nights_in_window_min_frp": 0,
+            "median_frp_mw": null
+          },
+          {
+            "plant": "Singrauli Super Thermal Power Station",
+            "detections": 0,
+            "nights": 0,
+            "max_nights_in_window": 0,
+            "max_nights_in_window_min_frp": 0,
+            "median_frp_mw": null
+          }
+        ]
+      }
+    },
+    "key_status": "{ \"transaction_limit\" : 5000, \"current_transactions\": 0, \"transaction_interval\" : \"10 minutes\" }"
+  },
+  "flares": {
+    "directory": "data/registry/raw/flares",
+    "files": [
+      {
+        "file": "2012-2024-Flare-Volume-Estimates-by-individual-Flare-Location.xlsx",
+        "sites": 156397,
+        "sites_in_region": 0
+      }
+    ],
+    "sites_in_region": 0,
+    "nightfire_files_on_disk": 0
+  },
+  "decisions": [
+    {
+      "decision": "Wind chain",
+      "suggestion": "History: the highest level that covers the window. Today: the source with the smallest latency. Keep a 10 m source last.",
+      "basis": "era5_hourly: levels [10, 100] m, 120 window days, latency 6.4 d; era5_land_hourly: levels [10] m, 120 window days, latency 5.52 d; gfs: levels [10] m, 0 window days, latency 0.31 d; CDS ERA5 100 m: access ok, latency at most 6 d"
+    },
+    {
+      "decision": "Source for today and for history",
+      "suggestion": "Near-real-time collections for today when their latency is under 1 day; offline collections for history and re-runs.",
+      "basis": "s5p_no2_offl 9.4 d, s5p_no2_nrti 0.08 d, s5p_so2_offl 2.85 d, s5p_so2_nrti 0.99 d"
+    },
+    {
+      "decision": "valid_fraction_min and windows",
+      "suggestion": "Keep the threshold.",
+      "basis": "Oct\u2013Mar months in the window: 77% of days valid at threshold 0.5"
+    },
+    {
+      "decision": "SO2 scope (gate G1)",
+      "suggestion": "SO2 detector stays.",
+      "basis": "5 of 22 plant-windows have z \u2265 2.0, a positive 5th percentile and at least 10 valid days; only 13 windows have that many valid days; largest z 5.46 (recent window and dry season 2025-11-01 to 2026-02-28 together)"
+    },
+    {
+      "decision": "Flaring source (`flaring.source`)",
+      "suggestion": "firms_persistent.",
+      "basis": "0 annual flare sites in the region; 0 Nightfire files on disk; plants with at least 3 nights of FRP \u2265 5 MW in a 30-day window: none"
+    },
+    {
+      "decision": "History requests",
+      "suggestion": "Use the batched table call per quarter (get_buffer_timeseries); never one call per day.",
+      "basis": "small reduceRegion calls, one day and one buffer each: 61.3 s, error: none; one request, reduceRegions mapped over 90 days x 20 buffers: 40.1 s, error: Too many concurrent aggregations.; one request, one reduceRegions over 90 days stacked as bands: 3.2 s, error: none"
+    }
+  ],
+  "plants": [
+    {
+      "name": "Vindhyachal",
+      "lon": 82.67408,
+      "lat": 24.10477,
+      "capacity_mw": 4760.0,
+      "source": "coal"
+    },
+    {
+      "name": "Sasan UMPP",
+      "lon": 82.62288,
+      "lat": 23.96443,
+      "capacity_mw": 3960.0,
+      "source": "coal"
+    },
+    {
+      "name": "Rihand Thermal Power Station",
+      "lon": 82.79324,
+      "lat": 24.02714,
+      "capacity_mw": 3000.0,
+      "source": "coal"
+    },
+    {
+      "name": "Obra Thermal Power Station",
+      "lon": 82.98291,
+      "lat": 24.45204,
+      "capacity_mw": 2320.0,
+      "source": "coal"
+    },
+    {
+      "name": "Singrauli Super Thermal Power Station",
+      "lon": 82.7058,
+      "lat": 24.10645,
+      "capacity_mw": 2000.0,
+      "source": "coal"
+    }
+  ],
+  "wind": {
+    "collections": {
+      "era5_hourly": {
+        "heights": [
+          10,
+          100
+        ],
+        "props": [
+          "hour"
+        ],
+        "days_covered": 120
+      },
+      "era5_land_hourly": {
+        "heights": [
+          10
+        ],
+        "props": [
+          "hour"
+        ],
+        "days_covered": 120
+      },
+      "gfs": {
+        "heights": [
+          10
+        ],
+        "props": [
+          "creation_time",
+          "forecast_hours",
+          "forecast_time"
+        ],
+        "days_covered": 0,
+        "note": "no analysis step at 08:00 UTC; the 06:00 UTC analysis covers 120 days of the window"
+      }
+    },
+    "ratios": [
+      {
+        "collection_key": "era5_hourly",
+        "plant": "Vindhyachal",
+        "low_m": 10,
+        "high_m": 100,
+        "mean_low": 2.889489878428285,
+        "mean_high": 3.9870849841965144,
+        "ratio": 1.3798577437361566,
+        "n": 120
+      },
+      {
+        "collection_key": "era5_hourly",
+        "plant": "Sasan UMPP",
+        "low_m": 10,
+        "high_m": 100,
+        "mean_low": 2.8630829622147917,
+        "mean_high": 4.0774799732458185,
+        "ratio": 1.4241571156190342,
+        "n": 120
+      },
+      {
+        "collection_key": "era5_hourly",
+        "plant": "Rihand Thermal Power Station",
+        "low_m": 10,
+        "high_m": 100,
+        "mean_low": 2.9826341969280312,
+        "mean_high": 3.9518904665827836,
+        "ratio": 1.3249665247763334,
+        "n": 120
+      }
+    ]
+  },
+  "dry_season": {
+    "start": "2025-11-01",
+    "end": "2026-02-28",
+    "null_buffer": {
+      "days": 120,
+      "days_tested": 102,
+      "z_bg_min": 2.0,
+      "days_detected": 88,
+      "median_excess": 0.00033519875069032423,
+      "median_sigma": 5.1201104133542684e-05,
+      "median_z": 6.288464098280219
+    },
+    "so2_window": [
+      {
+        "plant": "Vindhyachal",
+        "window_end": "2026-02-28",
+        "wind_source": "era5_hourly 100 m",
+        "n_valid_days": 25,
+        "mean": 0.0002583752910140902,
+        "z": 4.091807370278511,
+        "p5": 0.00015992980226292274
+      },
+      {
+        "plant": "Vindhyachal",
+        "window_end": "2026-01-31",
+        "wind_source": "era5_hourly 100 m",
+        "n_valid_days": 22,
+        "mean": 0.0005004189383312637,
+        "z": 4.206119626157849,
+        "p5": 0.00030617840539806906
+      },
+      {
+        "plant": "Vindhyachal",
+        "window_end": "2026-01-03",
+        "wind_source": "era5_hourly 100 m",
+        "n_valid_days": 23,
+        "mean": 0.0005603042152316724,
+        "z": 5.464300853456256,
+        "p5": 0.00039649766514902814
+      },
+      {
+        "plant": "Vindhyachal",
+        "window_end": "2025-12-06",
+        "wind_source": "era5_hourly 100 m",
+        "n_valid_days": 28,
+        "mean": 0.0003929705435439246,
+        "z": 2.7541849122441837,
+        "p5": 0.00013660822088630608
+      },
+      {
+        "plant": "Sasan UMPP",
+        "window_end": "2026-02-28",
+        "wind_source": "era5_hourly 100 m",
+        "n_valid_days": 24,
+        "mean": -4.061112667841371e-05,
+        "z": -0.43733545919805294,
+        "p5": -0.000199898062722544
+      },
+      {
+        "plant": "Sasan UMPP",
+        "window_end": "2026-01-31",
+        "wind_source": "era5_hourly 100 m",
+        "n_valid_days": 21,
+        "mean": 5.409747834727612e-05,
+        "z": 0.5116413357196405,
+        "p5": -0.00011993033634401704
+      },
+      {
+        "plant": "Sasan UMPP",
+        "window_end": "2026-01-03",
+        "wind_source": "era5_hourly 100 m",
+        "n_valid_days": 23,
+        "mean": -0.0001682298072568222,
+        "z": -1.462336954966376,
+        "p5": -0.00035452542381434523
+      },
+      {
+        "plant": "Sasan UMPP",
+        "window_end": "2025-12-06",
+        "wind_source": "era5_hourly 100 m",
+        "n_valid_days": 28,
+        "mean": -0.00027339571533957496,
+        "z": -2.179715641502141,
+        "p5": -0.00048268210817436086
+      },
+      {
+        "plant": "Rihand Thermal Power Station",
+        "window_end": "2026-02-28",
+        "wind_source": "era5_hourly 100 m",
+        "n_valid_days": 24,
+        "mean": -5.640990669538345e-05,
+        "z": -0.6809184210408967,
+        "p5": -0.00018790824151437846
+      },
+      {
+        "plant": "Rihand Thermal Power Station",
+        "window_end": "2026-01-31",
+        "wind_source": "era5_hourly 100 m",
+        "n_valid_days": 23,
+        "mean": -0.00018238648582432094,
+        "z": -1.3347267519456822,
+        "p5": -0.00041708917848629187
+      },
+      {
+        "plant": "Rihand Thermal Power Station",
+        "window_end": "2026-01-03",
+        "wind_source": "era5_hourly 100 m",
+        "n_valid_days": 22,
+        "mean": -0.00011041351624705634,
+        "z": -0.8767765347087314,
+        "p5": -0.0003422965810118099
+      },
+      {
+        "plant": "Rihand Thermal Power Station",
+        "window_end": "2025-12-06",
+        "wind_source": "era5_hourly 100 m",
+        "n_valid_days": 28,
+        "mean": -0.000297276325974443,
+        "z": -2.8860694965121945,
+        "p5": -0.0004679216969342243
+      }
+    ]
+  },
+  "gate_g1": {
+    "decided_on": "2026-10-10, by the project owner, following the suggestions in section 11",
+    "wind_chain": "era5_100m_ee, cds_era5_100m, gfs_ee, era5_land_10m_ee. ERA5 at 100 m for history (Earth Engine first, CDS second: same data, the CDS queue is slower); GFS 10 m for the last days; ERA5-Land 10 m as fallback",
+    "today_and_history": "Near-real-time Sentinel-5P collections for today, offline collections for history and re-runs. schedule.rerun_previous_days raised from 5 to 10 because offline NO2 arrives about 9 days late",
+    "so2": "Yes: the SO2 detector stays, tested per watch unit (cluster), not per plant. Vindhyachal passes in all four dry-season windows. No SO2 detections are expected in the monsoon",
+    "valid_days": "Yes: 77 % of Oct\u2013Mar days are valid. No window is widened",
+    "valid_fraction_min": "0.5 (unchanged)",
+    "flaring_source": "firms_persistent (unchanged). No night-time detections near the plants and no annual flare site in the region, so flaring is expected to be empty for Singrauli and has low priority",
+    "bbox": "Yes: [82.0, 23.6, 83.4, 24.8]; the five largest plants are inside"
+  }
+}

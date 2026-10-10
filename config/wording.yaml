@@ -1,0 +1,9 @@
+# Every user-facing claim, label and disclaimer. Read through app/wording.py:t(key).
+# Keep sentences short. Do not put such text in code or templates.
+
+disclaimer: "Screening indicator from satellite data at ~5 km resolution; not compliance evidence."
+score_label: "score (uncalibrated)"
+score_label_calibrated: "score"
+exposure_caption: "People inside the modelled transport footprint, not a measurement of exposure."
+evidence_caption_same_day: "Visible plume on the same day as the event. Context, not proof of emission."
+evidence_caption_context: "Visible plume from a different day than the event. Context only."

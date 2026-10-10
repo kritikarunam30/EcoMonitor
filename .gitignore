@@ -7,10 +7,6 @@ secrets/*
 *.pem
 *-key.json
 
-# Local planning notes
-IMPLEMENTATION_PLAN.md
-CLAUDE.md
-
 # Python
 __pycache__/
 *.py[cod]
@@ -30,7 +26,10 @@ data/cache/*
 !data/cache/.gitkeep
 data/registry/raw/*
 !data/registry/raw/.gitkeep
+# Hand-downloaded source files (CEA reports, licence-gated Nightfire files)
+data/raw/
 data/demo/
+data/user_dump.json
 models/*
 !models/.gitkeep
 !models/*stub*

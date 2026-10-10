@@ -1,109 +1,113 @@
-# Single source of truth for region, thresholds, schedule and weights.
-# Secrets and per-machine values live in .env (see .env.example).
-# Values marked "placeholder" are tuned in the phase that uses them.
+# Thresholds, weights and schedule (docs/IMPLEMENTATION_PLAN.md §0.10).
+# Secrets and per-machine values live in .env; user-facing text lives in config/wording.yaml.
+# Values are tuned only through the decision gates (plan §0.9), never to make a test pass.
 
 region:
   name: singrauli
-  # [min_lon, min_lat, max_lon, max_lat], WGS84
-  bbox: [82.30, 23.85, 82.95, 24.45]
+  bbox: [82.0, 23.6, 83.4, 24.8]       # lon_min, lat_min, lon_max, lat_max — verify in Phase S
   geojson: config/regions/singrauli.geojson
-  metric_crs: EPSG:32644
-  timezone: Asia/Kolkata
-
-data:
-  cache_dir: data/cache
-  fixtures_dir: tests/fixtures
-  max_aoi_km: 60
-
-registry:                      # Phase 3 (#16)
-  dedupe_radius_km: 3.0
-  name_weight: 0.6
-  distance_weight: 0.4
-  merge_threshold: 0.75        # placeholder
-  coordinate_priority: [gem, gppd, climate_trace, osm]
-  footprint_search_m: 500
-
+registry:
+  cluster_radius_km: 15
+  dedupe_threshold: 0.75
+  dedupe_max_km: 3
 detect:
-  no2:                         # Phase 4 (#1)
-    buffer_km: 5
-    annulus_inner_km: 20
-    annulus_outer_km: 50
-    z_threshold: 2.0
-    min_valid_fraction: 0.5
-    max_cloud_fraction: 0.3
-    footprint_sigma: 2.0
-  so2:                         # Phase 4 (#2)
-    window_days: 28
-    z_threshold: 2.0
-    min_valid_fraction: 0.5
-  ch4:                         # Phase 4 (#3)
-    baseline_months: 12
-  flaring:                     # Phase 4 (#5)
-    min_temperature_k: 1400
-    max_distance_km: 2.0
-    min_nights: 3
-    window_nights: 30
-  thermal:                     # Phase 6 (#7)
-    model_path: models/thermal_lgbm.txt
-    features_path: models/thermal_features.json
-  smoke:                       # Phase 7 (#8)
-    model_path: models/smoke_resnet18.onnx
-    chip_size_px: 128
-    max_cloud_pct: 20
-    stub_probability: 0.5
-  confidence:                  # Phase 4 (#21)
-    weights:
-      qa: 0.25
-      cloud: 0.2
-      wind: 0.2
-      overpasses: 0.15
-      z_margin: 0.2
-    wind_min_ms: 1.5
-    wind_max_ms: 10.0
-
+  local_radius_km: 5
+  null_annulus_km: [20, 50]
+  null_mask_km: 15            # exclude null buffers near any registered facility
+  n_null: 40
+  n_null_min_valid: 20
+  z_bg_min: 2.0
+  valid_fraction_min: 0.5
+  cloud_max: 0.3
+  aer_ai_degraded: 1.0
+  self_min_days: 20
+  self_season_days: 45
+  self_trailing_days: 90
+  z_self_min: 2.0
+  so2_window_days: 28
+  so2_min_valid_days: 10
+  so2_boot: 200
+flaring:
+  source: firms_persistent       # annual_sites | firms_persistent | nightfire (nightfire needs a licence)
+  radius_km: 2
+  min_nights: 3
+  window_days: 30
+  min_frp_mw: 5                  # firms_persistent only; tune from the spike's real counts
+  nightfire_temp_k: 1400         # nightfire only
+  annual_site_match_km: 1        # a detection within this distance of an annual flare site is flagged known_flare_site
+wind:
+  # Gate G1 (2026-10-10): ERA5 100 m for history, read from Earth Engine first and from the CDS second;
+  # GFS 10 m for the last days, which ERA5 does not cover yet; ERA5-Land 10 m as the fallback.
+  chain: [era5_100m_ee, cds_era5_100m, gfs_ee, era5_land_10m_ee]
+  level: 100m
+  uncertainty_frac: {era5_100m_ee: 0.25, cds_era5_100m: 0.25, gfs_ee: 0.30, era5_land_10m_ee: 0.35}
+  min_speed_ms: 1.5
+  max_speed_ms: 10
+  gfs_max_offset_hours: 3        # gfs_ee has analyses at run hours only; the nearest one within this answers (not in plan §0.10)
 attribute:
-  cone:                        # Phase 5 (#17)
-    half_angle_deg: 30
-    travel_hours: 3
-    max_length_km: 50
-    overpass_local_time: "13:30"
-  fusion:                      # Phase 5
-    window_hours: 48
-    max_confidence: 0.99
-    crop_burning_radius_km: 10
-    crop_burning_window_hours: 24
-  emission:                    # Phase 5 (#18)
-    wind_min_ms: 2.0
-    wind_max_ms: 8.0
-    across_wind_km: 20
-    no2_to_nox: 1.32
-    bootstrap_n: 200
-    band_percentiles: [5, 95]
-
-temporal:                      # Phase 8 (#22, #23)
-  baseline_model_path: models/baseline_lgbm.txt
-  start_date: "2018-05-01"
-  residual_window_days: 60
-  anomaly_z: 3.0
-  anomaly_min_days: 2
-  anomaly_lookback_days: 5
-  known_events_csv: data/known_events.csv
-
-impact:                        # Phase 9 (#28, #29)
-  wedge_half_angle_deg: 20
-  travel_hours: 3
-  max_length_km: 40
-  nearest_sites: 10
-
-alerts:                        # Phase 12 (#33)
-  from_address: alerts@emissions-monitor.local
-  base_url: http://localhost:8000
-
-schedule:                      # Phase 10, times in region timezone
-  daily_pipeline: "15:00"
-  reprocess_days: 5
+  cone_half_angle_deg: 30
+  transport_hours: 3
+  cone_max_km: 50
+  margin_min: 0.25
+fusion:
+  event_gap_hours: 48
+  corroboration_bonus: 0.05
+  corroboration_max: 0.10
+  score_cap: 0.95
+  burn_prob_min: 0.6
+  burn_frp_min_mw: 50
+  burn_window_hours: 24
+score:
+  weights: {signal_quality: 1.0, attribution_certainty: 1.0, anomaly_strength: 1.0}
+  neutral_anomaly: 0.5
+emission:
+  wind_min_ms: 2
+  wind_max_ms: 8
+  min_days: 60
+  n_boot: 200
+  boot_block_days: 7
+  across_km: 20
+  nox_no2_ratio: 1.32
+  seasons: {DJF: [12, 1, 2], MAM: [3, 4, 5], SON: [10, 11]}   # JJAS monsoon excluded
+  reference_match_km: 10
+baseline:
+  train_end: 2024-12-31
+  valid_year: 2025
+  rolling_z_days: 60
+  alert_z: 3.0
+  alert_k: 2
+  alert_n: 5
+  alert_calendar_days: 14
+  known_event_pad_days: 7
+impact:
+  wedge_half_angle_deg: 15
+  wedge_max_km: 30
+  decay_km: 15
+thermal:
+  ship_margin_f1: 0.03
+schedule:
+  daily_tz: Asia/Kolkata
+  daily_time: "15:00"
+  rerun_previous_days: 10        # gate G1: offline NO2 arrives about 9 days late (plan default was 5)
   firms_every_hours: 3
-  nightfire_daily: "09:00"
-  emission_rates_weekday: mon
-  baseline_retrain_day: 1
-  heartbeat_minutes: 10
+  emission_refresh: monthly
+  heartbeat_minutes: 10        # worker liveness log (not in plan §0.10)
+alerts:
+  max_watchlists_per_email: 5
+  max_watchlists_per_ip_per_day: 20
+  demo_auto_confirm: false
+# Data access (Phase 2; not in plan §0.10). Asset ids and bands are in config/sources.yaml.
+data:
+  ee_chunk_days: 20              # days stacked into one Earth Engine pixel request
+  s2_search_days: 5              # a Sentinel-2 chip may be this many days from the requested date
+  s2_max_cloud_pct: 20
+  ndvi_window_days: 15
+  ndvi_scale_m: 100
+  worldcover_scale_m: 100
+  overpass_timeout_s: 180
+# Map layers served as tiles: display range and palette per layer (Phase 2; tuned in Phase 11).
+layers:
+  no2: {min: 0.0, max: 0.0004, palette: ["#000004", "#51127c", "#b73779", "#fc8961", "#fcfdbf"]}
+  so2: {min: 0.0, max: 0.001, palette: ["#000004", "#51127c", "#b73779", "#fc8961", "#fcfdbf"]}
+  ch4: {min: 1850, max: 1950, palette: ["#440154", "#3b528b", "#21918c", "#5ec962", "#fde725"]}
+  aer_ai: {min: -1.0, max: 2.0, palette: ["#2166ac", "#f7f7f7", "#b2182b"]}
